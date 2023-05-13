@@ -1,6 +1,6 @@
 {
-    "name": "stylish",
-    "short_name": "stylish",
+    "name": "flutter_demo_10",
+    "short_name": "flutter_demo_10",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

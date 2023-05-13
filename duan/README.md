@@ -1,13 +1,16 @@
-### Flutter Shop UI kit
+# flutter_demo_10
 
-If you are planning to create an e-commerce app using Flutter then this Shop UI Kit would be the perfect choice for you to make a gorgeous app for both Android & iOS.
+A new Flutter project.
 
-This kit comes with more than 15 screens which contain the most common screens for your eCommerce app like Onboarding, Authentication, Homepage, product details page, Cart, user profile and more!
+## Getting Started
 
-### Download complete UI kit [Download](https://www.patreon.com/posts/61709201)
+This project is a starting point for a Flutter application.
 
-![Preview](/preview/0.png)
-![Preview](/preview/1.jpg)
-![Preview](/preview/2.jpg)
+A few resources to get you started if this is your first Flutter project:
 
-### Download complete Shop UI kit [Download](https://www.patreon.com/posts/61709201)
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

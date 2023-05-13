@@ -1,4 +1,4 @@
-package com.example.stylish
+package com.example.flutter_demo_10
 
 import io.flutter.embedding.android.FlutterActivity
 
