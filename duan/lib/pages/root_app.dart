@@ -20,24 +20,100 @@ class _RootAppState extends State<RootApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white,
-      bottomNavigationBar: getFooter(),
+      // bottomNavigationBar: getFooter(),
       // appBar: getAppBar(),
-      body: getBody(),
+      // body: getBody(),
+      appBar: AppBar(title: const Text('Cloles')),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.lightBlue),
+              child: Text('Cloles',
+                  textScaleFactor: 1.5, style: TextStyle(color: Colors.white)),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Home"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shop),
+              title: const Text("Store"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => StorePage(),
+                  ),
+                );
+              },
+            ),
+            // ListTile(
+            //   leading: const Icon(Icons.verified_user),
+            //   title: const Text("Account"),
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => AccountPage(),
+            //       ),
+            //     );
+            //   },
+            // ),
+            ListTile(
+              leading: const Icon(Icons.shopping_cart),
+              title: const Text("Cart"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.more_horiz),
+              title: const Text("More"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MorePage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      // body: const Center(
+      //   child: Text('Content Here', textScaleFactor: 4),
+      // ),
     );
   }
 
-  Widget getBody() {
-    return IndexedStack(
-      index: activeTab,
-      children: [
-        HomePage(),
-        StorePage(),
-        AccountPage(),
-        CartPage(),
-        MorePage()
-      ],
-    );
-  }
+  // Widget getBody() {
+  //   return IndexedStack(
+  //     index: activeTab,
+  //     children: [
+  //       HomePage(),
+  //       StorePage(),
+  //       AccountPage(),
+  //       CartPage(),
+  //       MorePage()
+  //     ],
+  //   );
+  // }
 
   // Widget getAppBar() {
   //   switch (activeTab) {

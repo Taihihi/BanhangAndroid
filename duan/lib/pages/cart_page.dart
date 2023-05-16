@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_demo_10/json/constant.dart';
 import 'package:flutter_demo_10/theme/colors.dart';
+import 'package:flutter_demo_10/pages/account_page.dart';
+import 'package:flutter_demo_10/pages/cart_page.dart';
+import 'package:flutter_demo_10/pages/home_page.dart';
+import 'package:flutter_demo_10/pages/more_page.dart';
+import 'package:flutter_demo_10/pages/store_page.dart';
 
 class CartPage extends StatefulWidget {
   @override
@@ -14,6 +19,79 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
       backgroundColor: white,
       body: getBody(),
+      appBar: AppBar(title: const Text('Cloles')),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.lightBlue),
+              child: Text('Cloles',
+                  textScaleFactor: 1.5, style: TextStyle(color: Colors.white)),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Home"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shop),
+              title: const Text("Store"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => StorePage(),
+                  ),
+                );
+              },
+            ),
+            // ListTile(
+            //   leading: const Icon(Icons.verified_user),
+            //   title: const Text("Account"),
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => AccountPage(),
+            //       ),
+            //     );
+            //   },
+            // ),
+            ListTile(
+              leading: const Icon(Icons.shopping_cart),
+              title: const Text("Cart"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.more_horiz),
+              title: const Text("More"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MorePage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -51,7 +129,7 @@ class _CartPageState extends State<CartPage> {
                           height: 10,
                         ),
                         Text(
-                          "ref " + cartList[index]['ref'],
+                          "" + cartList[index]['ref'],
                           style: TextStyle(
                               fontSize: 13, color: black.withOpacity(0.7)),
                         ),

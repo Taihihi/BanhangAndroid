@@ -3,10 +3,22 @@ import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_demo_10/json/constant.dart';
 import 'package:flutter_demo_10/theme/colors.dart';
+import 'package:flutter_demo_10/pages/home_page.dart';
+import 'package:flutter_demo_10/pages/account_page.dart';
+import 'package:flutter_demo_10/pages/cart_page.dart';
+import 'package:flutter_demo_10/pages/home_page.dart';
+import 'package:flutter_demo_10/pages/more_page.dart';
+import 'package:flutter_demo_10/pages/store_page.dart';
+import 'package:flutter_demo_10/cloles/cloles1.dart';
+import 'package:flutter_demo_10/cloles/cloles2.dart';
+import 'package:flutter_demo_10/cloles/cloles3.dart';
+import 'package:flutter_demo_10/cloles/cloles4.dart';
+import 'package:flutter_demo_10/cloles/cloles5.dart';
 
 class StorePage extends StatefulWidget {
+  const StorePage({Key? key}) : super(key: key);
   @override
-  _StorePageState createState() => _StorePageState();
+  State<StorePage> createState() => _StorePageState();
 }
 
 class _StorePageState extends State<StorePage> {
@@ -15,6 +27,79 @@ class _StorePageState extends State<StorePage> {
     return Scaffold(
       backgroundColor: white,
       body: getBody(),
+      appBar: AppBar(title: const Text('Cloles')),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.lightBlue),
+              child: Text('Cloles',
+                  textScaleFactor: 1.5, style: TextStyle(color: Colors.white)),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Home"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shop),
+              title: const Text("Store"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => StorePage(),
+                  ),
+                );
+              },
+            ),
+            // ListTile(
+            //   leading: const Icon(Icons.verified_user),
+            //   title: const Text("Account"),
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => AccountPage(),
+            //       ),
+            //     );
+            //   },
+            // ),
+            ListTile(
+              leading: const Icon(Icons.shopping_cart),
+              title: const Text("Cart"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.more_horiz),
+              title: const Text("More"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MorePage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -41,17 +126,17 @@ class _StorePageState extends State<StorePage> {
               ],
             ),
           ),
-          SizedBox(
-            height: 40,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: Text(
-              "Find all \nstores here",
-              style: TextStyle(
-                  fontSize: 30, height: 1.5, fontWeight: FontWeight.w400),
-            ),
-          ),
+          // SizedBox(
+          //   height: 40,
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.only(left: 20, right: 20),
+          //   child: Text(
+          //     "Find all stores here",
+          //     style: TextStyle(
+          //         fontSize: 30, height: 1.5, fontWeight: FontWeight.w400),
+          //   ),
+          // ),
           SizedBox(
             height: 40,
           ),
@@ -89,7 +174,7 @@ class _StorePageState extends State<StorePage> {
                       BoxDecoration(color: black, shape: BoxShape.circle),
                   child: Center(
                     child: Icon(
-                      Icons.map,
+                      Icons.search,
                       color: white,
                       size: 20,
                     ),
@@ -108,7 +193,8 @@ class _StorePageState extends State<StorePage> {
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Text(
-              "All stores",
+              // "All stores",
+              "Cloles",
               style: TextStyle(fontSize: 22, color: black),
             ),
           ),
@@ -117,108 +203,449 @@ class _StorePageState extends State<StorePage> {
           ),
           Column(
               children: List.generate(storeList.length, (index) {
-            return Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-              child: Container(
-                height: 200,
-                width: double.infinity,
-                child: Stack(
-                  children: [
-                    Container(
-                      height: 200,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: NetworkImage(storeList[index]['img']),
-                              fit: BoxFit.cover),
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                    Container(
-                      height: 200,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: black.withOpacity(0.35),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            return Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 180,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(1),
+                                  image: DecorationImage(
+                                      image:
+                                          NetworkImage(storeList[index]['img']),
+                                      fit: BoxFit.cover)),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              width: 140,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    storeList[index]['title'],
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: black,
+                                        height: 1.5),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "\$ " + storeList[index]['price'],
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: grey,
+                                        height: 1.5),
+                                  ),
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => Cloles1(),
+                                            ),
+                                            (route) => false);
+                                      },
+                                      child: Align(
+                                        alignment: Alignment.topRight,
+                                        child: const Text('Shop >>>',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                color: white,
+                                                fontWeight: FontWeight.bold)),
+                                      ))
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(20),
-                            child: Align(
-                              alignment: Alignment.topRight,
-                              child: Container(
-                                width: 65,
-                                height: 25,
-                                decoration: BoxDecoration(
-                                    color: white,
-                                    borderRadius: BorderRadius.circular(5)),
-                                child: storeList[index]['open'] == 0
-                                    ? Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Text(
-                                            "CLOSE",
-                                            style: TextStyle(
-                                                fontSize: 10,
-                                                color: black,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Container(
-                                            width: 8,
-                                            height: 8,
-                                            decoration: BoxDecoration(
-                                                color: Colors.redAccent,
-                                                shape: BoxShape.circle),
-                                          )
-                                        ],
-                                      )
-                                    : Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Text(
-                                            "OPEN",
-                                            style: TextStyle(
-                                                fontSize: 10,
-                                                color: black,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Container(
-                                            width: 8,
-                                            height: 8,
-                                            decoration: BoxDecoration(
-                                                color: Colors.green,
-                                                shape: BoxShape.circle),
-                                          )
-                                        ],
-                                      ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Row(
+                            padding: const EdgeInsets.only(left: 15),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Icon(Icons.map, size: 20, color: white),
-                                SizedBox(
-                                  width: 10,
+                                Container(
+                                  width: 140,
+                                  height: 180,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(1),
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              storeList2[index]['img']),
+                                          fit: BoxFit.cover)),
                                 ),
-                                Text(
-                                  storeList[index]['name'],
-                                  style: TextStyle(fontSize: 18, color: white),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Container(
+                                  width: 140,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        storeList2[index]['title'],
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: black,
+                                            height: 1.5),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        "\$ " + storeList2[index]['price'],
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: grey,
+                                            height: 1.5),
+                                      ),
+                                      ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pushAndRemoveUntil(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Cloles2(),
+                                                ),
+                                                (route) => false);
+                                          },
+                                          child: Align(
+                                            alignment: Alignment.topRight,
+                                            child: const Text('Shop >>>',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: white,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                          ))
+                                    ],
+                                  ),
                                 )
                               ],
                             ),
-                          )
+                          ),
                         ],
-                      ),
-                    ),
-                  ],
+                      )
+                    ],
+                  ),
                 ),
-              ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 180,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(1),
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          storeList3[index]['img']),
+                                      fit: BoxFit.cover)),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              width: 140,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    storeList3[index]['title'],
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: black,
+                                        height: 1.5),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "\$ " + storeList3[index]['price'],
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: grey,
+                                        height: 1.5),
+                                  ),
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => Cloles3(),
+                                            ),
+                                            (route) => false);
+                                      },
+                                      child: Align(
+                                        alignment: Alignment.topRight,
+                                        child: const Text('Shop >>>',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                color: white,
+                                                fontWeight: FontWeight.bold)),
+                                      ))
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 15),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 140,
+                                  height: 180,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(1),
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              storeList4[index]['img']),
+                                          fit: BoxFit.cover)),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Container(
+                                  width: 140,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        storeList4[index]['title'],
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: black,
+                                            height: 1.5),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        "\$ " + storeList4[index]['price'],
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: grey,
+                                            height: 1.5),
+                                      ),
+                                      ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pushAndRemoveUntil(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Cloles4(),
+                                                ),
+                                                (route) => false);
+                                          },
+                                          child: Align(
+                                            alignment: Alignment.topRight,
+                                            child: const Text('Shop >>>',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: white,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                          ))
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 180,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(1),
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          storeList5[index]['img']),
+                                      fit: BoxFit.cover)),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              width: 140,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    storeList5[index]['title'],
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: black,
+                                        height: 1.5),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "\$ " + storeList5[index]['price'],
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: grey,
+                                        height: 1.5),
+                                  ),
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => Cloles5(),
+                                            ),
+                                            (route) => false);
+                                      },
+                                      child: Align(
+                                        alignment: Alignment.topRight,
+                                        child: const Text('Shop >>>',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                color: white,
+                                                fontWeight: FontWeight.bold)),
+                                      ))
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 15),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 140,
+                                  height: 180,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(1),
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              storeList[index]['img']),
+                                          fit: BoxFit.cover)),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Container(
+                                  width: 140,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        storeList[index]['title'],
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: black,
+                                            height: 1.5),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        "\$ " + storeList[index]['price'],
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: grey,
+                                            height: 1.5),
+                                      ),
+                                      ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pushAndRemoveUntil(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Cloles1(),
+                                                ),
+                                                (route) => false);
+                                          },
+                                          child: Align(
+                                            alignment: Alignment.topRight,
+                                            child: const Text('Shop >>>',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    color: white,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                          ))
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ],
             );
-          }))
+          })),
         ],
       ),
     );
