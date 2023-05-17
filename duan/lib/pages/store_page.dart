@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo_10/json/constant.dart';
 import 'package:flutter_demo_10/theme/colors.dart';
 import 'package:flutter_demo_10/pages/home_page.dart';
-import 'package:flutter_demo_10/pages/account_page.dart';
+// import 'package:flutter_demo_10/pages/account_page.dart';
 import 'package:flutter_demo_10/pages/cart_page.dart';
 import 'package:flutter_demo_10/pages/home_page.dart';
 import 'package:flutter_demo_10/pages/more_page.dart';
@@ -14,6 +14,7 @@ import 'package:flutter_demo_10/cloles/cloles2.dart';
 import 'package:flutter_demo_10/cloles/cloles3.dart';
 import 'package:flutter_demo_10/cloles/cloles4.dart';
 import 'package:flutter_demo_10/cloles/cloles5.dart';
+import 'package:flutter_demo_10/cloles/cloles6.dart';
 
 class StorePage extends StatefulWidget {
   const StorePage({Key? key}) : super(key: key);
@@ -51,7 +52,7 @@ class _StorePageState extends State<StorePage> {
             ),
             ListTile(
               leading: const Icon(Icons.shop),
-              title: const Text("Store"),
+              title: const Text("Shop"),
               onTap: () {
                 Navigator.push(
                   context,
@@ -112,17 +113,17 @@ class _StorePageState extends State<StorePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  "Phnom Penh",
-                  style: TextStyle(fontSize: 16),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  Icons.map,
-                  size: 20,
-                )
+                // Text(
+                //   "Phnom Penh",
+                //   style: TextStyle(fontSize: 16),
+                // ),
+                // SizedBox(
+                //   width: 10,
+                // ),
+                // Icon(
+                //   Icons.map,
+                //   size: 20,
+                // )
               ],
             ),
           ),
@@ -138,7 +139,7 @@ class _StorePageState extends State<StorePage> {
           //   ),
           // ),
           SizedBox(
-            height: 40,
+            height: 20,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
@@ -260,7 +261,7 @@ class _StorePageState extends State<StorePage> {
                                       },
                                       child: Align(
                                         alignment: Alignment.topRight,
-                                        child: const Text('Shop >>>',
+                                        child: const Text('Buy Now >>>',
                                             style: TextStyle(
                                                 fontSize: 10,
                                                 color: white,
@@ -331,7 +332,7 @@ class _StorePageState extends State<StorePage> {
                                           },
                                           child: Align(
                                             alignment: Alignment.topRight,
-                                            child: const Text('Shop >>>',
+                                            child: const Text('Buy Now >>>',
                                                 style: TextStyle(
                                                     fontSize: 10,
                                                     color: white,
@@ -407,7 +408,7 @@ class _StorePageState extends State<StorePage> {
                                       },
                                       child: Align(
                                         alignment: Alignment.topRight,
-                                        child: const Text('Shop >>>',
+                                        child: const Text('Buy Now >>>',
                                             style: TextStyle(
                                                 fontSize: 10,
                                                 color: white,
@@ -478,7 +479,7 @@ class _StorePageState extends State<StorePage> {
                                           },
                                           child: Align(
                                             alignment: Alignment.topRight,
-                                            child: const Text('Shop >>>',
+                                            child: const Text('Buy Now >>>',
                                                 style: TextStyle(
                                                     fontSize: 10,
                                                     color: white,
@@ -554,7 +555,7 @@ class _StorePageState extends State<StorePage> {
                                       },
                                       child: Align(
                                         alignment: Alignment.topRight,
-                                        child: const Text('Shop >>>',
+                                        child: const Text('Buy Now >>>',
                                             style: TextStyle(
                                                 fontSize: 10,
                                                 color: white,
@@ -584,7 +585,7 @@ class _StorePageState extends State<StorePage> {
                                       borderRadius: BorderRadius.circular(1),
                                       image: DecorationImage(
                                           image: NetworkImage(
-                                              storeList[index]['img']),
+                                              storeList6[index]['img']),
                                           fit: BoxFit.cover)),
                                 ),
                                 SizedBox(
@@ -597,7 +598,7 @@ class _StorePageState extends State<StorePage> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        storeList[index]['title'],
+                                        storeList6[index]['title'],
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: black,
@@ -607,7 +608,7 @@ class _StorePageState extends State<StorePage> {
                                         height: 5,
                                       ),
                                       Text(
-                                        "\$ " + storeList[index]['price'],
+                                        "\$ " + storeList6[index]['price'],
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: grey,
@@ -619,13 +620,13 @@ class _StorePageState extends State<StorePage> {
                                                 context,
                                                 MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Cloles1(),
+                                                      Cloles6(),
                                                 ),
                                                 (route) => false);
                                           },
                                           child: Align(
                                             alignment: Alignment.topRight,
-                                            child: const Text('Shop >>>',
+                                            child: const Text('Buy Now >>>',
                                                 style: TextStyle(
                                                     fontSize: 10,
                                                     color: white,

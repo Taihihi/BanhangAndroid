@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_demo_10/json/constant.dart';
 import 'package:flutter_demo_10/theme/colors.dart';
-import 'package:flutter_demo_10/pages/account_page.dart';
+// import 'package:flutter_demo_10/pages/account_page.dart';
 import 'package:flutter_demo_10/pages/cart_page.dart';
 import 'package:flutter_demo_10/pages/home_page.dart';
 import 'package:flutter_demo_10/pages/more_page.dart';
@@ -43,7 +43,7 @@ class _CartPageState extends State<CartPage> {
             ),
             ListTile(
               leading: const Icon(Icons.shop),
-              title: const Text("Store"),
+              title: const Text("Shop"),
               onTap: () {
                 Navigator.push(
                   context,
@@ -218,22 +218,22 @@ class _CartPageState extends State<CartPage> {
         SizedBox(
           height: 10,
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30),
-          child: Text(
-            "Do you have a promotion code?",
-            style: TextStyle(fontSize: 16),
-          ),
-        ),
-        SizedBox(
-          height: 15,
-        ),
-        Divider(
-          color: grey.withOpacity(0.8),
-        ),
-        SizedBox(
-          height: 15,
-        ),
+        // Padding(
+        //   padding: const EdgeInsets.only(left: 30, right: 30),
+        //   child: Text(
+        //     "Do you have a promotion code?",
+        //     style: TextStyle(fontSize: 16),
+        //   ),
+        // ),
+        // SizedBox(
+        //   height: 15,
+        // ),
+        // Divider(
+        //   color: grey.withOpacity(0.8),
+        // ),
+        // SizedBox(
+        //   height: 15,
+        // ),
         Padding(
           padding: const EdgeInsets.only(left: 30, right: 30),
           child: Row(

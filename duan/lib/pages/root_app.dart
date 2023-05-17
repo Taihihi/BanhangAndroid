@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_10/json/constant.dart';
-import 'package:flutter_demo_10/pages/account_page.dart';
+// import 'package:flutter_demo_10/pages/account_page.dart';
 import 'package:flutter_demo_10/pages/cart_page.dart';
 import 'package:flutter_demo_10/pages/home_page.dart';
 import 'package:flutter_demo_10/pages/more_page.dart';
@@ -47,7 +47,7 @@ class _RootAppState extends State<RootApp> {
             ),
             ListTile(
               leading: const Icon(Icons.shop),
-              title: const Text("Store"),
+              title: const Text("Shop"),
               onTap: () {
                 Navigator.push(
                   context,

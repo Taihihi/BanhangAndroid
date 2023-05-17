@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo_10/json/constant.dart';
 import 'package:flutter_demo_10/theme/colors.dart';
 import 'package:flutter_demo_10/widgets/custom_slider.dart';
-import 'package:flutter_demo_10/pages/account_page.dart';
+// import 'package:flutter_demo_10/pages/account_page.dart';
 import 'package:flutter_demo_10/pages/cart_page.dart';
 import 'package:flutter_demo_10/pages/home_page.dart';
 import 'package:flutter_demo_10/pages/more_page.dart';
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               leading: const Icon(Icons.shop),
-              title: const Text("Store"),
+              title: const Text("Shop"),
               onTap: () {
                 Navigator.push(
                   context,

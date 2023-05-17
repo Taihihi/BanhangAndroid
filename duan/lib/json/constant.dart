@@ -8,7 +8,7 @@ const String homeImg =
 
 const String profileUrl =
     // "https://images.unsplash.com/photo-1616597082843-de7ce757d548?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0N3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
-    "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60";
+    "https://static.vecteezy.com/system/resources/previews/000/645/833/original/vector-group-people-icon.jpg";
 // const List<Map<String, Object>> categories = [
 const List categories = [
   {
@@ -338,25 +338,25 @@ const List cartList = [
   // },
   {
     "img":
-        "https://canifa.com/img/486/733/resize/8/t/8ts23s014-sg113-2-thumb.webp",
-    "name": "T-Shirt Nam",
+        'https://canifa.com/img/486/733/resize/8/t/8ts23s014-sg113-2-thumb.webp',
+    "name": "Quần Áo Xanh",
     "ref": "04559812",
-    "price": "\$40",
+    "price": "\$100.000",
     "size": "S"
   },
   {
-    "img": "https://canifa.com/img/486/733/resize/8/t/8tp23s001-sb194-2.webp",
-    "name": "Quần Áo Nam",
+    "img": 'https://canifa.com/img/486/733/resize/8/t/8tp23s001-sb194-2.webp',
+    "name": "Quần Polo Nam",
     "ref": "04459811",
-    "price": "\$30",
+    "price": "\$80.000",
     "size": "M"
   },
   {
     "img":
-        "https://canifa.com/img/486/733/resize/6/t/6ts23s021-sp235-2-thumb.webp",
-    "name": "Quần Áo Nữ",
+        'https://canifa.com/img/486/733/resize/6/t/6ts23s021-sp235-2-thumb.webp',
+    "name": "Áo Phông Nữ",
     "ref": "04556811",
-    "price": "\$35",
+    "price": "\$70.000",
     "size": "S"
   },
 ];
@@ -462,5 +462,15 @@ List storeList5 = [
     "name": "Les Halles, Paris",
     'title': 'Túi Xách Xanh',
     'price': '150.000',
+  },
+];
+
+const List storeList6 = [
+  {
+    'title': 'Quần Khaki Nam',
+    'price': '150.000',
+    "name": "Les Halles, Paris",
+    'img':
+        'https://canifa.com/img/486/733/resize/8/b/8bk23a001-sb229-2-thumb.webp',
   },
 ];
