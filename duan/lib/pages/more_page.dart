@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_10/json/constant.dart';
-import 'package:flutter_demo_10/theme/colors.dart';
-// import 'package:flutter_demo_10/pages/account_page.dart';
-import 'package:flutter_demo_10/pages/cart_page.dart';
-import 'package:flutter_demo_10/pages/home_page.dart';
-import 'package:flutter_demo_10/pages/more_page.dart';
-import 'package:flutter_demo_10/pages/store_page.dart';
-import 'package:flutter_demo_10/cloles/cloles1.dart';
+import 'package:duan/json/constant.dart';
+import 'package:duan/theme/colors.dart';
+// import 'package:duan/pages/account_page.dart';
+import 'package:duan/pages/cart_page.dart';
+import 'package:duan/pages/home_page.dart';
+import 'package:duan/pages/more_page.dart';
+import 'package:duan/pages/store_page.dart';
+import 'package:duan/cloles/cloles1.dart';
 
 class MorePage extends StatefulWidget {
   @override
@@ -160,82 +160,82 @@ class _MorePageState extends State<MorePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                width: (size.width - 100) / 2,
-                height: 50,
-                // decoration: BoxDecoration(
-                //     color: black, borderRadius: BorderRadius.circular(30)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Cloles1(),
-                              ),
-                              (route) => false);
-                        },
-                        child: Center(
-                          child: Text(
-                            "Settings",
-                            style: TextStyle(fontSize: 15, color: white),
-                          ),
-                        ))
-                  ],
-                ),
-              ),
               // Container(
               //   width: (size.width - 100) / 2,
               //   height: 50,
-              //   decoration: BoxDecoration(
-              //       color: black, borderRadius: BorderRadius.circular(30)),
-              //   child: Center(
-              //     child: Text(
-              //       "Settings",
-              //       style: TextStyle(fontSize: 15, color: white),
-              //     ),
+              //   // decoration: BoxDecoration(
+              //   //     color: black, borderRadius: BorderRadius.circular(30)),
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       ElevatedButton(
+              //           onPressed: () {
+              //             Navigator.pushAndRemoveUntil(
+              //                 context,
+              //                 MaterialPageRoute(
+              //                   builder: (context) => Cloles1(),
+              //                 ),
+              //                 (route) => false);
+              //           },
+              //           child: Center(
+              //             child: Text(
+              //               "Settings",
+              //               style: TextStyle(fontSize: 15, color: white),
+              //             ),
+              //           ))
+              //     ],
               //   ),
               // ),
               Container(
                 width: (size.width - 100) / 2,
                 height: 50,
-                // decoration: BoxDecoration(
-                //     color: black, borderRadius: BorderRadius.circular(30)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Cloles1(),
-                              ),
-                              (route) => false);
-                        },
-                        child: Center(
-                          child: Text(
-                            "Sign Out",
-                            style: TextStyle(fontSize: 15, color: white),
-                          ),
-                        ))
-                  ],
+                decoration: BoxDecoration(
+                    color: black, borderRadius: BorderRadius.circular(30)),
+                child: Center(
+                  child: Text(
+                    "Settings",
+                    style: TextStyle(fontSize: 15, color: white),
+                  ),
                 ),
-              )
+              ),
               // Container(
               //   width: (size.width - 100) / 2,
               //   height: 50,
-              //   decoration: BoxDecoration(
-              //       color: black, borderRadius: BorderRadius.circular(30)),
-              //   child: Center(
-              //     child: Text(
-              //       "Sign Out",
-              //       style: TextStyle(fontSize: 15, color: white),
-              //     ),
+              //   // decoration: BoxDecoration(
+              //   //     color: black, borderRadius: BorderRadius.circular(30)),
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       ElevatedButton(
+              //           onPressed: () {
+              //             Navigator.pushAndRemoveUntil(
+              //                 context,
+              //                 MaterialPageRoute(
+              //                   builder: (context) => Cloles1(),
+              //                 ),
+              //                 (route) => false);
+              //           },
+              //           child: Center(
+              //             child: Text(
+              //               "Sign Out",
+              //               style: TextStyle(fontSize: 15, color: white),
+              //             ),
+              //           ))
+              //     ],
               //   ),
               // )
+              Container(
+                width: (size.width - 100) / 2,
+                height: 50,
+                decoration: BoxDecoration(
+                    color: black, borderRadius: BorderRadius.circular(30)),
+                child: Center(
+                  child: Text(
+                    "Sign Out",
+                    style: TextStyle(fontSize: 15, color: white),
+                  ),
+                ),
+              )
             ],
           ),
         )
