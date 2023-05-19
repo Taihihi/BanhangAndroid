@@ -1,6 +1,6 @@
 // import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:duan/theme/colors.dart';
+import 'package:flutter_demo_10/theme/colors.dart';
 
 class CustomeCarouselHomePage extends StatefulWidget {
   // final List<String> items;
