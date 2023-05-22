@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_demo_10/pages/home_page.dart';
+import 'package:flutter_demo_12/pages/home_page.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});

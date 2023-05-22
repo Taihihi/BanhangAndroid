@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_demo_10/json/constant.dart';
-import 'package:flutter_demo_10/theme/colors.dart';
-import 'package:flutter_demo_10/widgets/custom_slider.dart';
-import 'package:flutter_demo_10/pages/account_page.dart';
-import 'package:flutter_demo_10/pages/cart_page.dart';
-import 'package:flutter_demo_10/pages/home_page.dart';
-import 'package:flutter_demo_10/pages/more_page.dart';
-import 'package:flutter_demo_10/pages/store_page.dart';
+import 'package:flutter_demo_12/json/constant.dart';
+import 'package:flutter_demo_12/theme/colors.dart';
+import 'package:flutter_demo_12/widgets/custom_slider.dart';
+import 'package:flutter_demo_12/pages/account_page.dart';
+import 'package:flutter_demo_12/pages/cart_page.dart';
+import 'package:flutter_demo_12/pages/home_page.dart';
+import 'package:flutter_demo_12/pages/more_page.dart';
+import 'package:flutter_demo_12/pages/store_page.dart';
 
 class Cloles13 extends StatefulWidget {
   @override
@@ -30,7 +30,7 @@ class _HomePageState extends State<Cloles13> {
             Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => StorePage(),
+                  builder: (context) => HomePage(),
                 ),
                 (route) => false);
           },
@@ -47,7 +47,7 @@ class _HomePageState extends State<Cloles13> {
         Stack(
           children: [
             Column(
-                children: List.generate(storeList4.length, (index) {
+                children: List.generate(recently.length, (index) {
               return Padding(
                 padding: const EdgeInsets.only(left: 0, right: 0, bottom: 0),
                 child: Container(
@@ -58,7 +58,7 @@ class _HomePageState extends State<Cloles13> {
                         height: 500,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: NetworkImage(storeList4[index]['img']),
+                                image: NetworkImage(recently3[index]['imgUrl']),
                                 fit: BoxFit.cover)),
                       ),
                     ],

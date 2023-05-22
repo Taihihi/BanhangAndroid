@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_10/json/constant.dart';
-import 'package:flutter_demo_10/theme/colors.dart';
-// import 'package:flutter_demo_10/pages/account_page.dart';
-import 'package:flutter_demo_10/pages/cart_page.dart';
-import 'package:flutter_demo_10/pages/home_page.dart';
-import 'package:flutter_demo_10/pages/more_page.dart';
-import 'package:flutter_demo_10/pages/store_page.dart';
-import 'package:flutter_demo_10/cloles/cloles1.dart';
+import 'package:flutter_demo_12/json/constant.dart';
+import 'package:flutter_demo_12/theme/colors.dart';
+// import 'package:duan/pages/account_page.dart';
+import 'package:flutter_demo_12/pages/cart_page.dart';
+import 'package:flutter_demo_12/pages/home_page.dart';
+import 'package:flutter_demo_12/pages/more_page.dart';
+import 'package:flutter_demo_12/pages/store_page.dart';
+import 'package:flutter_demo_12/cloles/cloles1.dart';
+import 'package:flutter_demo_12/json/login.dart';
+import 'package:flutter_demo_12/appmenu.dart';
 
 class MorePage extends StatefulWidget {
+  const MorePage({Key? key}) : super(key: key);
   @override
   _MorePageState createState() => _MorePageState();
 }
@@ -20,78 +23,79 @@ class _MorePageState extends State<MorePage> {
       backgroundColor: white,
       body: getBody(),
       appBar: AppBar(title: const Text('Cloles')),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.lightBlue),
-              child: Text('Cloles',
-                  textScaleFactor: 1.5, style: TextStyle(color: Colors.white)),
-            ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text("Home"),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.shop),
-              title: const Text("Shop"),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => StorePage(),
-                  ),
-                );
-              },
-            ),
-            // ListTile(
-            //   leading: const Icon(Icons.verified_user),
-            //   title: const Text("Account"),
-            //   onTap: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) => AccountPage(),
-            //       ),
-            //     );
-            //   },
-            // ),
-            ListTile(
-              leading: const Icon(Icons.shopping_cart),
-              title: const Text("Cart"),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CartPage(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.more_horiz),
-              title: const Text("More"),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MorePage(),
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const AppMenu(),
+      // drawer: Drawer(
+      //   child: ListView(
+      //     padding: EdgeInsets.zero,
+      //     children: [
+      //       const DrawerHeader(
+      //         decoration: BoxDecoration(color: Colors.lightBlue),
+      //         child: Text('Cloles',
+      //             textScaleFactor: 1.5, style: TextStyle(color: Colors.white)),
+      //       ),
+      //       ListTile(
+      //         leading: const Icon(Icons.home),
+      //         title: const Text("Home"),
+      //         onTap: () {
+      //           Navigator.push(
+      //             context,
+      //             MaterialPageRoute(
+      //               builder: (context) => HomePage(),
+      //             ),
+      //           );
+      //         },
+      //       ),
+      //       ListTile(
+      //         leading: const Icon(Icons.shop),
+      //         title: const Text("Shop"),
+      //         onTap: () {
+      //           Navigator.push(
+      //             context,
+      //             MaterialPageRoute(
+      //               builder: (context) => StorePage(),
+      //             ),
+      //           );
+      //         },
+      //       ),
+      // ListTile(
+      //   leading: const Icon(Icons.verified_user),
+      //   title: const Text("Account"),
+      //   onTap: () {
+      //     Navigator.push(
+      //       context,
+      //       MaterialPageRoute(
+      //         builder: (context) => AccountPage(),
+      //       ),
+      //     );
+      //   },
+      // ),
+      //       ListTile(
+      //         leading: const Icon(Icons.shopping_cart),
+      //         title: const Text("Cart"),
+      //         onTap: () {
+      //           Navigator.push(
+      //             context,
+      //             MaterialPageRoute(
+      //               builder: (context) => CartPage(),
+      //             ),
+      //           );
+      //         },
+      //       ),
+      //       ListTile(
+      //         leading: const Icon(Icons.more_horiz),
+      //         title: const Text("More"),
+      //         onTap: () {
+      //           Navigator.push(
+      //             context,
+      //             MaterialPageRoute(
+      //               builder: (context) => MorePage(),
+      //             ),
+      //           );
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 
@@ -160,82 +164,49 @@ class _MorePageState extends State<MorePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Container(
-              //   width: (size.width - 100) / 2,
-              //   height: 50,
-              //   // decoration: BoxDecoration(
-              //   //     color: black, borderRadius: BorderRadius.circular(30)),
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       ElevatedButton(
-              //           onPressed: () {
-              //             Navigator.pushAndRemoveUntil(
-              //                 context,
-              //                 MaterialPageRoute(
-              //                   builder: (context) => Cloles1(),
-              //                 ),
-              //                 (route) => false);
-              //           },
-              //           child: Center(
-              //             child: Text(
-              //               "Settings",
-              //               style: TextStyle(fontSize: 15, color: white),
-              //             ),
-              //           ))
-              //     ],
-              //   ),
-              // ),
-              Container(
-                width: (size.width - 100) / 2,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: black, borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                  child: Text(
-                    "Settings",
-                    style: TextStyle(fontSize: 15, color: white),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                      (route) => false);
+                },
+                child: Container(
+                  width: (size.width - 100) / 2,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: black, borderRadius: BorderRadius.circular(30)),
+                  child: Center(
+                    child: Text(
+                      "Settings",
+                      style: TextStyle(fontSize: 15, color: white),
+                    ),
                   ),
                 ),
               ),
-              // Container(
-              //   width: (size.width - 100) / 2,
-              //   height: 50,
-              //   // decoration: BoxDecoration(
-              //   //     color: black, borderRadius: BorderRadius.circular(30)),
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       ElevatedButton(
-              //           onPressed: () {
-              //             Navigator.pushAndRemoveUntil(
-              //                 context,
-              //                 MaterialPageRoute(
-              //                   builder: (context) => Cloles1(),
-              //                 ),
-              //                 (route) => false);
-              //           },
-              //           child: Center(
-              //             child: Text(
-              //               "Sign Out",
-              //               style: TextStyle(fontSize: 15, color: white),
-              //             ),
-              //           ))
-              //     ],
-              //   ),
-              // )
-              Container(
-                width: (size.width - 100) / 2,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: black, borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                  child: Text(
-                    "Sign Out",
-                    style: TextStyle(fontSize: 15, color: white),
-                  ),
-                ),
-              )
+              GestureDetector(
+                  onTap: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ),
+                        (route) => false);
+                  },
+                  child: Container(
+                    width: (size.width - 100) / 2,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: black, borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                      child: Text(
+                        "Sign Out",
+                        style: TextStyle(fontSize: 15, color: white),
+                      ),
+                    ),
+                  )),
             ],
           ),
         )
