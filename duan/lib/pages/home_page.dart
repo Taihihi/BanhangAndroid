@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_demo_12/json/constant.dart';
+import 'package:flutter_demo_12/models.dart';
 import 'package:flutter_demo_12/theme/colors.dart';
 import 'package:flutter_demo_12/widgets/custom_slider.dart';
 // import 'package:duan/pages/account_page.dart';
@@ -18,6 +19,16 @@ import 'package:flutter_demo_12/cloles/closes13.dart';
 import 'package:flutter_demo_12/cloles/closes14.dart';
 // import 'package:duan/cloles/cloles7.dart';
 import 'package:flutter_demo_12/appmenu.dart';
+import 'package:flutter_demo_12/widgets/product_item.dart';
+import 'package:flutter_demo_12/pages/profile_page.dart';
+import 'package:flutter_demo_12/pages/notification_page.dart';
+import 'package:flutter_demo_12/pages/product_detail_page.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_demo_12/pages/grocery_item_tile.dart';
+import 'package:flutter_demo_12/pages/cart_model.dart';
+import 'package:flutter_demo_12/pages/cart_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,80 +42,23 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: white,
       body: getBody(),
-      appBar: AppBar(title: const Text('Cloles')),
+      appBar: AppBar(
+        title: const Text('Cloles'),
+        // actions: [
+        //   IconButton(
+        //     icon: Icon(Icons.shopping_cart),
+        //     onPressed: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) => CartPage(cartItems: cartItems),
+        //         ),
+        //       );
+        //     },
+        //   ),
+        // ],
+      ),
       drawer: const AppMenu(),
-      // drawer: Drawer(
-      //   child: ListView(
-      //     padding: EdgeInsets.zero,
-      //     children: [
-      //       const DrawerHeader(
-      //         decoration: BoxDecoration(color: Colors.lightBlue),
-      //         child: Text('Cloles',
-      //             textScaleFactor: 1.5, style: TextStyle(color: Colors.white)),
-      //       ),
-      //       ListTile(
-      //         leading: const Icon(Icons.home),
-      //         title: const Text("Home"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => HomePage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      //       ListTile(
-      //         leading: const Icon(Icons.shop),
-      //         title: const Text("Shop"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => StorePage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      // ListTile(
-      //   leading: const Icon(Icons.verified_user),
-      //   title: const Text("Account"),
-      //   onTap: () {
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) => AccountPage(),
-      //       ),
-      //     );
-      //   },
-      // ),
-      // ListTile(
-      //   leading: const Icon(Icons.shopping_cart),
-      //   title: const Text("Cart"),
-      //   onTap: () {
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) => CartPage(),
-      //       ),
-      //     );
-      //   },
-      // ),
-      // ListTile(
-      //   leading: const Icon(Icons.more_horiz),
-      //   title: const Text("More"),
-      //   onTap: () {
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) => MorePage(),
-      //       ),
-      //     );
-      //   },
-      // ),
-      // ],
-      // ),
-      // ),
     );
   }
 
@@ -169,6 +123,50 @@ class _HomePageState extends State<HomePage> {
         ),
         SizedBox(
           height: 40,
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: List.generate(categories.length, (index) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Container(
+                  width: 180,
+                  height: 220,
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image:
+                                    NetworkImage(categories[index]['imgUrl']),
+                                fit: BoxFit.cover),
+                            borderRadius: BorderRadius.circular(5)),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: black.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(5)),
+                      ),
+                      Positioned(
+                        bottom: 5,
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            categories[index]['title'],
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: white),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              );
+            }),
+          ),
         ),
         SizedBox(
           height: 40,
