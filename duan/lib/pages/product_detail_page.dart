@@ -1,7 +1,7 @@
 // File: screens/product_detail_page.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_12/models.dart';
-import 'package:flutter_demo_12/pages/cart_page.dart';
+import 'package:flutter_demo_14/models.dart';
+import 'package:flutter_demo_14/pages/cart_page.dart';
 
 class ProductDetailPage extends StatefulWidget {
   final Product product;

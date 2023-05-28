@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_12/pages/home_page.dart';
-import 'package:flutter_demo_12/pages/more_page.dart';
-// import 'package:flutter_demo_12/pages/root_app.dart';
-import 'package:flutter_demo_12/pages/cart_page.dart';
-import 'package:flutter_demo_12/pages/store_page.dart';
+import 'package:flutter_demo_14/pages/home_page.dart';
+import 'package:flutter_demo_14/pages/more_page.dart';
+// import 'package:flutter_demo_14/pages/root_app.dart';
+// import 'package:flutter_demo_14/pages/cart_page.dart';
+// import 'package:flutter_demo_14/pages/store_page.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:flutter_demo_14/screens/shop_page.dart';
 
 class AppMenu extends StatefulWidget {
   const AppMenu({super.key});
@@ -59,7 +60,7 @@ class _AppmenuState extends State<AppMenu> {
           ListTile(
             leading: const Icon(Icons.shop),
             title: const Text('Shop'),
-            onTap: () => _showScreen(context, const StorePage()),
+            onTap: () => _showScreen(context, const ShopPage()),
           ),
           // ListTile(
           //   leading: const Icon(Icons.shopping_cart),

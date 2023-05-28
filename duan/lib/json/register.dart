@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_12/components/my_register.dart';
-import 'package:flutter_demo_12/components/my_textfield.dart';
-import 'package:flutter_demo_12/components/square_tile.dart';
-import 'package:flutter_demo_12/json/login.dart';
+import 'package:flutter_demo_14/components/my_register.dart';
+import 'package:flutter_demo_14/components/my_textfield.dart';
+import 'package:flutter_demo_14/components/square_tile.dart';
+import 'package:flutter_demo_14/json/login.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
