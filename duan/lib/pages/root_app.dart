@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_10/json/constant.dart';
+import 'package:flutter_demo_14/json/constant.dart';
 // import 'package:duan/pages/account_page.dart';
-import 'package:flutter_demo_10/pages/cart_page.dart';
-import 'package:flutter_demo_10/pages/home_page.dart';
-import 'package:flutter_demo_10/pages/more_page.dart';
-import 'package:flutter_demo_10/pages/store_page.dart';
-import 'package:flutter_demo_10/theme/colors.dart';
+import 'package:flutter_demo_14/pages/cart_page.dart';
+import 'package:flutter_demo_14/pages/home_page.dart';
+import 'package:flutter_demo_14/pages/more_page.dart';
+import 'package:flutter_demo_14/pages/store_page.dart';
+import 'package:flutter_demo_14/theme/colors.dart';
 
 class RootApp extends StatefulWidget {
   @override
@@ -69,18 +69,18 @@ class _RootAppState extends State<RootApp> {
             //     );
             //   },
             // ),
-            ListTile(
-              leading: const Icon(Icons.shopping_cart),
-              title: const Text("Cart"),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CartPage(),
-                  ),
-                );
-              },
-            ),
+            // ListTile(
+            //   leading: const Icon(Icons.shopping_cart),
+            //   title: const Text("Cart"),
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => CartPage(),
+            //       ),
+            //     );
+            //   },
+            // ),
             ListTile(
               leading: const Icon(Icons.more_horiz),
               title: const Text("More"),

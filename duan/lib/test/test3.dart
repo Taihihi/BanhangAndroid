@@ -1,54 +1,99 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_demo_14/json/constant.dart';
-import 'package:flutter_demo_14/models.dart';
-import 'package:flutter_demo_14/theme/colors.dart';
-import 'package:flutter_demo_14/widgets/custom_slider.dart';
-// import 'package:duan/pages/account_page.dart';
-import 'package:flutter_demo_14/pages/cart_page.dart';
-import 'package:flutter_demo_14/pages/home_page.dart';
-import 'package:flutter_demo_14/pages/more_page.dart';
-import 'package:flutter_demo_14/pages/store_page.dart';
-import 'package:flutter_demo_14/cloles/cloles7.dart';
-import 'package:flutter_demo_14/cloles/cloles8.dart';
-import 'package:flutter_demo_14/cloles/cloles9.dart';
-import 'package:flutter_demo_14/cloles/closes10.dart';
-import 'package:flutter_demo_14/cloles/closes11.dart';
-import 'package:flutter_demo_14/cloles/closes12.dart';
-import 'package:flutter_demo_14/cloles/closes13.dart';
-import 'package:flutter_demo_14/cloles/closes14.dart';
-// import 'package:duan/cloles/cloles7.dart';
-import 'package:flutter_demo_14/appmenu.dart';
+import 'package:flutter_demo_10/json/constant.dart';
+import 'package:flutter_demo_10/theme/colors.dart';
+import 'package:flutter_demo_10/widgets/custom_slider.dart';
+import 'package:flutter_demo_10/pages/account_page.dart';
+import 'package:flutter_demo_10/pages/cart_page.dart';
+import 'package:flutter_demo_10/pages/home_page.dart';
+import 'package:flutter_demo_10/pages/more_page.dart';
+import 'package:flutter_demo_10/pages/store_page.dart';
+import 'package:flutter_demo_10/cloles/cloles1.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Cloles8 extends StatefulWidget {
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Cloles8> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<Cloles8> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white,
       body: getBody(),
-      appBar: AppBar(
-        title: const Text('Cloles'),
-        // actions: [
-        //   IconButton(
-        //     icon: Icon(Icons.shopping_cart),
-        //     onPressed: () {
-        //       Navigator.push(
-        //         context,
-        //         MaterialPageRoute(
-        //           builder: (context) => CartPage(cartItems: cartItems),
-        //         ),
-        //       );
-        //     },
-        //   ),
-        // ],
+      appBar: AppBar(title: const Text('Cloles')),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.lightBlue),
+              child: Text('Cloles',
+                  textScaleFactor: 1.5, style: TextStyle(color: Colors.white)),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Home"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shop),
+              title: const Text("Store"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => StorePage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.verified_user),
+              title: const Text("Account"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AccountPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shopping_cart),
+              title: const Text("Cart"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CartPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.more_horiz),
+              title: const Text("More"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MorePage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
-      drawer: const AppMenu(),
     );
   }
 
@@ -114,50 +159,6 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           height: 40,
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: List.generate(categories.length, (index) {
-              return Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Container(
-                  width: 180,
-                  height: 220,
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image:
-                                    NetworkImage(categories[index]['imgUrl']),
-                                fit: BoxFit.cover),
-                            borderRadius: BorderRadius.circular(5)),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: black.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(5)),
-                      ),
-                      Positioned(
-                        bottom: 5,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            categories[index]['title'],
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                                color: white),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              );
-            }),
-          ),
-        ),
         SizedBox(
           height: 40,
         ),
@@ -166,7 +167,7 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Đề Xuất Cho Bạn",
+              Text("Recommended for you",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               Row(
                 children: [
@@ -200,25 +201,15 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Cloles7(),
-                                  ),
-                                  (route) => false);
-                            },
-                            child: Container(
-                              width: 140,
-                              height: 180,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(1),
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          recommends[index]['imgUrl']),
-                                      fit: BoxFit.cover)),
-                            ),
+                          Container(
+                            width: 140,
+                            height: 180,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(1),
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        recommends[index]['imgUrl']),
+                                    fit: BoxFit.cover)),
                           ),
                           SizedBox(
                             height: 5,
@@ -245,23 +236,23 @@ class _HomePageState extends State<HomePage> {
                                       color: grey,
                                       height: 1.5),
                                 ),
-                                // ElevatedButton(
-                                //     onPressed: () {
-                                //       Navigator.pushAndRemoveUntil(
-                                //           context,
-                                //           MaterialPageRoute(
-                                //             builder: (context) => Cloles7(),
-                                //           ),
-                                //           (route) => false);
-                                //     },
-                                //     child: Align(
-                                //       alignment: Alignment.topRight,
-                                //       child: const Text("Buy Now >>",
-                                //           style: TextStyle(
-                                //               fontSize: 10,
-                                //               color: white,
-                                //               fontWeight: FontWeight.bold)),
-                                //     ))
+                                ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Cloles1(),
+                                          ),
+                                          (route) => false);
+                                    },
+                                    child: Align(
+                                      alignment: Alignment.topRight,
+                                      child: const Text('Shop >>>',
+                                          style: TextStyle(
+                                              fontSize: 10,
+                                              color: white,
+                                              fontWeight: FontWeight.bold)),
+                                    ))
                               ],
                             ),
                           )
@@ -279,25 +270,15 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Cloles8(),
-                                      ),
-                                      (route) => false);
-                                },
-                                child: Container(
-                                  width: 140,
-                                  height: 180,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(1),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              recommends2[index]['imgUrl']),
-                                          fit: BoxFit.cover)),
-                                ),
+                              Container(
+                                width: 140,
+                                height: 180,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(1),
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            recommends2[index]['imgUrl']),
+                                        fit: BoxFit.cover)),
                               ),
                               SizedBox(
                                 height: 5,
@@ -324,23 +305,23 @@ class _HomePageState extends State<HomePage> {
                                           color: grey,
                                           height: 1.5),
                                     ),
-                                    // ElevatedButton(
-                                    //     onPressed: () {
-                                    //       Navigator.pushAndRemoveUntil(
-                                    //           context,
-                                    //           MaterialPageRoute(
-                                    //             builder: (context) => Cloles8(),
-                                    //           ),
-                                    //           (route) => false);
-                                    //     },
-                                    //     child: Align(
-                                    //       alignment: Alignment.topRight,
-                                    //       child: const Text("Buy Now >>",
-                                    //           style: TextStyle(
-                                    //               fontSize: 10,
-                                    //               color: white,
-                                    //               fontWeight: FontWeight.bold)),
-                                    //     ))
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => Cloles1(),
+                                              ),
+                                              (route) => false);
+                                        },
+                                        child: Align(
+                                          alignment: Alignment.topRight,
+                                          child: const Text('Shop >>>',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: white,
+                                                  fontWeight: FontWeight.bold)),
+                                        ))
                                   ],
                                 ),
                               )
@@ -364,25 +345,15 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Cloles9(),
-                                  ),
-                                  (route) => false);
-                            },
-                            child: Container(
-                              width: 140,
-                              height: 180,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(1),
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          recommends3[index]['imgUrl']),
-                                      fit: BoxFit.cover)),
-                            ),
+                          Container(
+                            width: 140,
+                            height: 180,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(1),
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        recommends3[index]['imgUrl']),
+                                    fit: BoxFit.cover)),
                           ),
                           SizedBox(
                             height: 5,
@@ -409,23 +380,23 @@ class _HomePageState extends State<HomePage> {
                                       color: grey,
                                       height: 1.5),
                                 ),
-                                // ElevatedButton(
-                                //     onPressed: () {
-                                //       Navigator.pushAndRemoveUntil(
-                                //           context,
-                                //           MaterialPageRoute(
-                                //             builder: (context) => Cloles9(),
-                                //           ),
-                                //           (route) => false);
-                                //     },
-                                //     child: Align(
-                                //       alignment: Alignment.topRight,
-                                //       child: const Text("Buy Now >>",
-                                //           style: TextStyle(
-                                //               fontSize: 10,
-                                //               color: white,
-                                //               fontWeight: FontWeight.bold)),
-                                //     ))
+                                ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Cloles1(),
+                                          ),
+                                          (route) => false);
+                                    },
+                                    child: Align(
+                                      alignment: Alignment.topRight,
+                                      child: const Text('Shop >>>',
+                                          style: TextStyle(
+                                              fontSize: 10,
+                                              color: white,
+                                              fontWeight: FontWeight.bold)),
+                                    ))
                               ],
                             ),
                           )
@@ -443,25 +414,15 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Cloles10(),
-                                      ),
-                                      (route) => false);
-                                },
-                                child: Container(
-                                  width: 140,
-                                  height: 180,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(1),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              recommends4[index]['imgUrl']),
-                                          fit: BoxFit.cover)),
-                                ),
+                              Container(
+                                width: 140,
+                                height: 180,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(1),
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            recommends4[index]['imgUrl']),
+                                        fit: BoxFit.cover)),
                               ),
                               SizedBox(
                                 height: 5,
@@ -488,24 +449,23 @@ class _HomePageState extends State<HomePage> {
                                           color: grey,
                                           height: 1.5),
                                     ),
-                                    // ElevatedButton(
-                                    //     onPressed: () {
-                                    //       Navigator.pushAndRemoveUntil(
-                                    //           context,
-                                    //           MaterialPageRoute(
-                                    //             builder: (context) =>
-                                    //                 Cloles10(),
-                                    //           ),
-                                    //           (route) => false);
-                                    //     },
-                                    //     child: Align(
-                                    //       alignment: Alignment.topRight,
-                                    //       child: const Text("Buy Now >>",
-                                    //           style: TextStyle(
-                                    //               fontSize: 10,
-                                    //               color: white,
-                                    //               fontWeight: FontWeight.bold)),
-                                    //     ))
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => Cloles1(),
+                                              ),
+                                              (route) => false);
+                                        },
+                                        child: Align(
+                                          alignment: Alignment.topRight,
+                                          child: const Text('Shop >>>',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: white,
+                                                  fontWeight: FontWeight.bold)),
+                                        ))
                                   ],
                                 ),
                               )
@@ -537,7 +497,7 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Xem Gần Đây",
+              Text("Recent viewed",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               Row(
                 children: [
@@ -571,25 +531,15 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Cloles11(),
-                                  ),
-                                  (route) => false);
-                            },
-                            child: Container(
-                              width: 140,
-                              height: 180,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(1),
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          recently[index]['imgUrl']),
-                                      fit: BoxFit.cover)),
-                            ),
+                          Container(
+                            width: 140,
+                            height: 180,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(1),
+                                image: DecorationImage(
+                                    image:
+                                        NetworkImage(recently[index]['imgUrl']),
+                                    fit: BoxFit.cover)),
                           ),
                           SizedBox(
                             height: 5,
@@ -616,23 +566,23 @@ class _HomePageState extends State<HomePage> {
                                       color: grey,
                                       height: 1.5),
                                 ),
-                                // ElevatedButton(
-                                //     onPressed: () {
-                                //       Navigator.pushAndRemoveUntil(
-                                //           context,
-                                //           MaterialPageRoute(
-                                //             builder: (context) => Cloles14(),
-                                //           ),
-                                //           (route) => false);
-                                //     },
-                                //     child: Align(
-                                //       alignment: Alignment.topRight,
-                                //       child: const Text("Buy Now >>",
-                                //           style: TextStyle(
-                                //               fontSize: 10,
-                                //               color: white,
-                                //               fontWeight: FontWeight.bold)),
-                                //     ))
+                                ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Cloles1(),
+                                          ),
+                                          (route) => false);
+                                    },
+                                    child: Align(
+                                      alignment: Alignment.topRight,
+                                      child: const Text('Shop >>>',
+                                          style: TextStyle(
+                                              fontSize: 10,
+                                              color: white,
+                                              fontWeight: FontWeight.bold)),
+                                    ))
                               ],
                             ),
                           )
@@ -650,25 +600,15 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Cloles12(),
-                                      ),
-                                      (route) => false);
-                                },
-                                child: Container(
-                                  width: 140,
-                                  height: 180,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(1),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              recently2[index]['imgUrl']),
-                                          fit: BoxFit.cover)),
-                                ),
+                              Container(
+                                width: 140,
+                                height: 180,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(1),
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            recently2[index]['imgUrl']),
+                                        fit: BoxFit.cover)),
                               ),
                               SizedBox(
                                 height: 5,
@@ -695,24 +635,23 @@ class _HomePageState extends State<HomePage> {
                                           color: grey,
                                           height: 1.5),
                                     ),
-                                    // ElevatedButton(
-                                    //     onPressed: () {
-                                    //       Navigator.pushAndRemoveUntil(
-                                    //           context,
-                                    //           MaterialPageRoute(
-                                    //             builder: (context) =>
-                                    //                 Cloles11(),
-                                    //           ),
-                                    //           (route) => false);
-                                    //     },
-                                    //     child: Align(
-                                    //       alignment: Alignment.topRight,
-                                    //       child: const Text("Buy Now >>",
-                                    //           style: TextStyle(
-                                    //               fontSize: 10,
-                                    //               color: white,
-                                    //               fontWeight: FontWeight.bold)),
-                                    //     ))
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => Cloles1(),
+                                              ),
+                                              (route) => false);
+                                        },
+                                        child: Align(
+                                          alignment: Alignment.topRight,
+                                          child: const Text('Shop >>>',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: white,
+                                                  fontWeight: FontWeight.bold)),
+                                        ))
                                   ],
                                 ),
                               )
@@ -736,25 +675,15 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Cloles13(),
-                                  ),
-                                  (route) => false);
-                            },
-                            child: Container(
-                              width: 140,
-                              height: 180,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(1),
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          recently3[index]['imgUrl']),
-                                      fit: BoxFit.cover)),
-                            ),
+                          Container(
+                            width: 140,
+                            height: 180,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(1),
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        recently3[index]['imgUrl']),
+                                    fit: BoxFit.cover)),
                           ),
                           SizedBox(
                             height: 5,
@@ -781,23 +710,23 @@ class _HomePageState extends State<HomePage> {
                                       color: grey,
                                       height: 1.5),
                                 ),
-                                // ElevatedButton(
-                                //     onPressed: () {
-                                //       Navigator.pushAndRemoveUntil(
-                                //           context,
-                                //           MaterialPageRoute(
-                                //             builder: (context) => Cloles12(),
-                                //           ),
-                                //           (route) => false);
-                                //     },
-                                //     child: Align(
-                                //       alignment: Alignment.topRight,
-                                //       child: const Text("Buy Now >>",
-                                //           style: TextStyle(
-                                //               fontSize: 10,
-                                //               color: white,
-                                //               fontWeight: FontWeight.bold)),
-                                //     ))
+                                ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Cloles1(),
+                                          ),
+                                          (route) => false);
+                                    },
+                                    child: Align(
+                                      alignment: Alignment.topRight,
+                                      child: const Text('Shop >>>',
+                                          style: TextStyle(
+                                              fontSize: 10,
+                                              color: white,
+                                              fontWeight: FontWeight.bold)),
+                                    ))
                               ],
                             ),
                           )
@@ -815,25 +744,15 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Cloles14(),
-                                      ),
-                                      (route) => false);
-                                },
-                                child: Container(
-                                  width: 140,
-                                  height: 180,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(1),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              recently4[index]['imgUrl']),
-                                          fit: BoxFit.cover)),
-                                ),
+                              Container(
+                                width: 140,
+                                height: 180,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(1),
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            recently4[index]['imgUrl']),
+                                        fit: BoxFit.cover)),
                               ),
                               SizedBox(
                                 height: 5,
@@ -860,24 +779,23 @@ class _HomePageState extends State<HomePage> {
                                           color: grey,
                                           height: 1.5),
                                     ),
-                                    // ElevatedButton(
-                                    //     onPressed: () {
-                                    //       Navigator.pushAndRemoveUntil(
-                                    //           context,
-                                    //           MaterialPageRoute(
-                                    //             builder: (context) =>
-                                    //                 Cloles13(),
-                                    //           ),
-                                    //           (route) => false);
-                                    //     },
-                                    //     child: Align(
-                                    //       alignment: Alignment.topRight,
-                                    //       child: const Text("Buy Now >>",
-                                    //           style: TextStyle(
-                                    //               fontSize: 10,
-                                    //               color: white,
-                                    //               fontWeight: FontWeight.bold)),
-                                    //     ))
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => Cloles1(),
+                                              ),
+                                              (route) => false);
+                                        },
+                                        child: Align(
+                                          alignment: Alignment.topRight,
+                                          child: const Text('Shop >>>',
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: white,
+                                                  fontWeight: FontWeight.bold)),
+                                        ))
                                   ],
                                 ),
                               )

@@ -8,109 +8,73 @@ const String homeImg =
 
 const String profileUrl =
     // "https://images.unsplash.com/photo-1616597082843-de7ce757d548?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0N3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60";
-    "https://static.vecteezy.com/system/resources/previews/000/645/833/original/vector-group-people-icon.jpg";
+    "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60";
 // const List<Map<String, Object>> categories = [
-
-const List products = [
-  {
-    'id': '1',
-    'name': 'T-Shirt',
-    'image': 'assets/images/3.webp',
-    'price': 29.99,
-    'description': 'shirt',
-  },
-];
-
 const List categories = [
-  // {
-  //   'title': 'New In',
-  //   'imgUrl':
-  //       'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fGZhc2hpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-  // },
-  // {
-  //   'title': 'Clothing',
-  //   'imgUrl':
-  //       'https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fGZhc2hpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-  // },
-  // {
-  //   'title': 'Men',
-  //   'imgUrl':
-  //       'https://images.unsplash.com/photo-1521341057461-6eb5f40b07ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
-  // },
-  // {
-  //   'title': 'Women',
-  //   'imgUrl':
-  //       'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fGZhc2hpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-  // },
-  // {
-  //   'title': 'Couple',
-  //   'imgUrl':
-  //       'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTR8fGZhc2hpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-  // },
   {
-    'title': '100.000 VNĐ',
+    'title': 'New In',
     'imgUrl':
-        'https://canifa.com/img/486/733/resize/8/t/8ts23s014-sg113-2-thumb.webp',
+        'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fGZhc2hpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
   },
   {
-    'title': '80.000 VNĐ',
+    'title': 'Clothing',
     'imgUrl':
-        'https://canifa.com/img/486/733/resize/8/t/8tp23s001-sb194-2.webp',
+        'https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fGZhc2hpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
   },
   {
-    'title': '150.000 VNĐ',
+    'title': 'Men',
     'imgUrl':
-        'https://images.unsplash.com/photo-1544642899-f0d6e5f6ed6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+        'https://images.unsplash.com/photo-1521341057461-6eb5f40b07ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
   },
   {
-    'title': '70.000 VNĐ',
+    'title': 'Women',
     'imgUrl':
-        'https://canifa.com/img/486/733/resize/6/t/6ts23s021-sp235-2-thumb.webp',
+        'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fGZhc2hpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
   },
   {
-    'title': '150.000 VNĐ',
+    'title': 'Couple',
     'imgUrl':
-        'https://images.unsplash.com/photo-1560891958-68bb1fe7fb78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+        'https://images.unsplash.com/photo-1550614000-4895a10e1bfd?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTR8fGZhc2hpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
   },
 ];
 
 // const List<Map<String, Object>> recommends = [
 const List recommends = [
   {
-    'title': 'Đồ Mặc Nhà Bé Trai',
-    'price': '90.000',
+    'title': 'Summer Loose Korean T-shirt',
+    'price': '30',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/2/l/2ls23s012-sg067-120-1-ghep.webp',
   },
 ];
 const List recommends2 = [
   {
-    'title': 'Quần Jeans Nam',
-    'price': '110.000',
+    'title': 'Bat Sleeve Student T-shirt Summer',
+    'price': '35',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/8/b/8bj23a003-sj777-31-1.webp',
   },
 ];
 const List recommends3 = [
   {
-    'title': 'Bộ Mặc Nhà Nữ',
-    'price': '90.000',
+    'title': 'Summer New Korean Version',
+    'price': '25',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/6/l/6ls23s004-fn021-m-1-ghep.webp',
   },
 ];
 const List recommends4 = [
   {
-    'title': 'Quần Soóc Bé Trai',
-    'price': '80.000',
+    'title': 'Loose-fitting Outside Shirt',
+    'price': '30',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/2/b/2bs23c018-se002-110-1_1.webp',
   },
 ];
 const List recommends5 = [
   {
-    'title': 'Quần Soóc Jeans Nữ',
-    'price': '100.000',
+    'title': 'Cotton Short-sleeved T-shirt',
+    'price': '20',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/6/b/6bs23s005-sj797-27-1.webp',
   }
@@ -119,40 +83,40 @@ const List recommends5 = [
 // const List<Map<String, Object>> recently = [
 const List recently = [
   {
-    'title': 'Quần Khaki Nam',
-    'price': '150.000',
+    'title': 'Summer Loose Korean T-shirt',
+    'price': '30',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/8/b/8bk23a001-sb229-2-thumb.webp',
   },
 ];
 const List recently2 = [
   {
-    'title': 'Quần Jeans Nữ',
-    'price': '90.000',
+    'title': 'Bat Sleeve Student T-shirt Summer',
+    'price': '35',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/6/b/6bj23s001-sj813-2-thumb.webp',
   },
 ];
 const List recently3 = [
   {
-    'title': 'Áo Polo Nam',
-    'price': '80.000',
+    'title': 'Summer New Korean Version',
+    'price': '25',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/8/t/8tp23s001-sb194-2.webp',
   },
 ];
 const List recently4 = [
   {
-    'title': 'Áo Phông Nữ In Nhỏ',
-    'price': '70.000',
+    'title': 'Loose-fitting Outside Shirt',
+    'price': '30',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/6/t/6ts23s021-sp235-2-thumb.webp',
   },
 ];
 const List recently5 = [
   {
-    'title': 'Áo Xanh Nam',
-    'price': '100.000',
+    'title': 'Cotton Short-sleeved T-shirt',
+    'price': '20',
     'imgUrl':
         'https://canifa.com/img/486/733/resize/8/t/8ts23s014-sg113-2-thumb.webp',
   }
@@ -374,25 +338,25 @@ const List cartList = [
   // },
   {
     "img":
-        'https://canifa.com/img/486/733/resize/8/t/8ts23s014-sg113-2-thumb.webp',
-    "name": "Quần Áo Xanh",
+        "https://canifa.com/img/486/733/resize/8/t/8ts23s014-sg113-2-thumb.webp",
+    "name": "T-Shirt Nam",
     "ref": "04559812",
-    "price": "\$100.000",
+    "price": "\$40",
     "size": "S"
   },
   {
-    "img": 'https://canifa.com/img/486/733/resize/8/t/8tp23s001-sb194-2.webp',
-    "name": "Quần Polo Nam",
+    "img": "https://canifa.com/img/486/733/resize/8/t/8tp23s001-sb194-2.webp",
+    "name": "Quần Áo Nam",
     "ref": "04459811",
-    "price": "\$80.000",
+    "price": "\$30",
     "size": "M"
   },
   {
     "img":
-        'https://canifa.com/img/486/733/resize/6/t/6ts23s021-sp235-2-thumb.webp',
-    "name": "Áo Phông Nữ",
+        "https://canifa.com/img/486/733/resize/6/t/6ts23s021-sp235-2-thumb.webp",
+    "name": "Quần Áo Nữ",
     "ref": "04556811",
-    "price": "\$70.000",
+    "price": "\$35",
     "size": "S"
   },
 ];
@@ -438,9 +402,7 @@ List storeList = [
         'https://canifa.com/img/486/733/resize/8/t/8ts23s014-sg113-2-thumb.webp',
     //     "https://file.hstatic.net/1000050141/file/phong-nen-chup-anh-quan-ao_5829f610a84541acb0cb4e6ef8a5a1f3_grande.png",
     "name": "Les Halles, Paris",
-    "open": 0,
-    'title': 'Áo Xanh Nam',
-    'price': '100.000',
+    "open": 0
   },
   // {
   //   "img":
@@ -467,8 +429,7 @@ List storeList2 = [
     "img":
         "https://canifa.com/img/486/733/resize/6/t/6ts23s021-sp235-2-thumb.webp",
     "name": "Les Halles, Paris",
-    'title': 'Áo Phông Nữ In Nhỏ',
-    'price': '70.000',
+    // "open": 0
   },
 ];
 
@@ -477,8 +438,7 @@ List storeList3 = [
     "img":
         "https://images.unsplash.com/photo-1544642899-f0d6e5f6ed6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     "name": "Les Halles, Paris",
-    'title': 'Quần Áo Jeans',
-    'price': '150.000',
+    // "open": 0
   },
 ];
 
@@ -486,8 +446,7 @@ List storeList4 = [
   {
     "img": "https://canifa.com/img/486/733/resize/8/t/8tp23s001-sb194-2.webp",
     "name": "Les Halles, Paris",
-    'title': 'Áo Polo Nam',
-    'price': '80.000',
+    // "open": 0
   },
 ];
 
@@ -496,17 +455,6 @@ List storeList5 = [
     "img":
         "https://images.unsplash.com/photo-1560891958-68bb1fe7fb78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     "name": "Les Halles, Paris",
-    'title': 'Túi Xách Xanh',
-    'price': '150.000',
-  },
-];
-
-const List storeList6 = [
-  {
-    'title': 'Quần Khaki Nam',
-    'price': '150.000',
-    "name": "Les Halles, Paris",
-    'img':
-        'https://canifa.com/img/486/733/resize/8/b/8bk23a001-sb229-2-thumb.webp',
+    // "open": 0
   },
 ];
