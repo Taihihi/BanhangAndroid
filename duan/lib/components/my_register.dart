@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_12/json/login.dart';
+import 'package:flutter_demo_14/json/login.dart';
+import 'package:flutter_demo_14/ui/login/login_screen.dart';
 
 class MyRegister extends StatelessWidget {
   final Function()? onTap;
@@ -13,7 +14,7 @@ class MyRegister extends StatelessWidget {
         Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(
-              builder: (context) => LoginPage(),
+              builder: (context) => LoginScreen(),
             ),
             (route) => false);
       },
