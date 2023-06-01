@@ -38,7 +38,7 @@ class ProductItem extends StatelessWidget {
             ),
             SizedBox(height: 4.0),
             Text(
-              '\$${product.price.toStringAsFixed(2)}',
+              '${product.price.toStringAsFixed(2)} đ',
               style: TextStyle(
                 fontSize: 14.0,
                 color: Colors.grey,

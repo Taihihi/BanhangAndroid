@@ -14,6 +14,6 @@ class Prefs {
     return await _prefs.setString('password', value);
   }
 
-  static String get username => _prefs.getString('username') ?? ('test');
-  static String get password => _prefs.getString('password') ?? ('123456');
+  static String get username => _prefs.getString('username') ?? ('');
+  static String get password => _prefs.getString('password') ?? ('');
 }

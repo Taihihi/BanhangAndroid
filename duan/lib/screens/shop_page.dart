@@ -120,7 +120,7 @@ class _HomePageState extends State<ShopPage> {
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Added to cart'),
+        content: Text('Added To Cart'),
         duration: Duration(seconds: 1),
       ),
     );
@@ -143,28 +143,28 @@ class _HomePageState extends State<ShopPage> {
               );
             },
           ),
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ProfilePage(),
-                ),
-              );
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.notifications),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => NotificationPage(),
-                ),
-              );
-            },
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.person),
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(
+          //         builder: (context) => ProfilePage(),
+          //       ),
+          //     );
+          //   },
+          // ),
+          // IconButton(
+          //   icon: Icon(Icons.notifications),
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(
+          //         builder: (context) => NotificationPage(),
+          //       ),
+          //     );
+          //   },
+          // ),
         ],
       ),
       drawer: const AppMenu(),

@@ -149,7 +149,7 @@ class _CartPageState extends State<CartPage> {
       ),
       body: widget.cartItems.isEmpty
           ? Center(
-              child: Text('Your shopping cart is empty.'),
+              child: Text('Your Shopping Cart Is Empty.'),
             )
           : ListView.builder(
               itemCount: widget.cartItems.length,
@@ -165,7 +165,7 @@ class _CartPageState extends State<CartPage> {
                   ),
                   title: Text(cartItem.product.name),
                   subtitle:
-                      Text('\$${cartItem.product.price.toStringAsFixed(2)}'),
+                      Text('${cartItem.product.price.toStringAsFixed(2)}đ'),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -194,7 +194,7 @@ class _CartPageState extends State<CartPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Total: \$${getTotalPrice().toStringAsFixed(2)}',
+                    'Total: ${getTotalPrice().toStringAsFixed(2)} đ',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -205,12 +205,12 @@ class _CartPageState extends State<CartPage> {
                       // Perform payment logic here
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text('Payment successful'),
+                          content: Text('Payment Successful'),
                           duration: Duration(seconds: 1),
                         ),
                       );
                     },
-                    child: Text('Checkout'),
+                    child: Text('Puy'),
                   ),
                 ],
               ),

@@ -6,8 +6,8 @@ import 'package:flutter_demo_14/pages/cart_page.dart';
 import 'package:flutter_demo_14/pages/home_page.dart';
 import 'package:flutter_demo_14/pages/more_page.dart';
 import 'package:flutter_demo_14/pages/store_page.dart';
-// import 'package:flutter_demo_14/cloles/cloles1.dart';
-// import 'package:flutter_demo_14/json/login.dart';
+import 'package:flutter_demo_14/cloles/cloles1.dart';
+import 'package:flutter_demo_14/json/login.dart';
 import 'package:flutter_demo_14/ui/login/login_screen.dart';
 import 'package:flutter_demo_14/appmenu.dart';
 
@@ -203,7 +203,7 @@ class _MorePageState extends State<MorePage> {
                         color: black, borderRadius: BorderRadius.circular(30)),
                     child: Center(
                       child: Text(
-                        "Sign Out",
+                        "LogOut",
                         style: TextStyle(fontSize: 15, color: white),
                       ),
                     ),

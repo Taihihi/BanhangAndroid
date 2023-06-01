@@ -461,7 +461,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Đã thêm vào giỏ hàng'),
+        content: Text('Đã Thêm Vào Giỏ Hàng'),
         duration: Duration(seconds: 1),
       ),
     );
@@ -471,7 +471,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chi tiết sản phẩm'),
+        title: Text('Chi Tiết Sản Phẩm'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -496,7 +496,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   ),
                   SizedBox(height: 8.0),
                   Text(
-                    '\$${widget.product.price.toStringAsFixed(2)}',
+                    '${widget.product.price.toStringAsFixed(2)}',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -505,7 +505,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   ),
                   SizedBox(height: 16.0),
                   Text(
-                    'Mô tả:',
+                    'Mô Tả:',
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
@@ -520,7 +520,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Số lượng:',
+                        'Số Lượng:',
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
@@ -544,7 +544,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   SizedBox(height: 16.0),
                   ElevatedButton(
                     onPressed: addToCart,
-                    child: Text('Thêm vào giỏ hàng'),
+                    child: Text('Thêm Vào Giỏ Hàng'),
                   ),
                 ],
               ),
@@ -553,7 +553,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
-                'Sản phẩm liên quan',
+                'Sản Phẩm Liên Quan',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
@@ -565,7 +565,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
-                'Đánh giá của khách hàng',
+                'Đánh Giá Của Khách Hàng',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,

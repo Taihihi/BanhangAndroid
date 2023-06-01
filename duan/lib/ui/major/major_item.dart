@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_14/model/major.dart';
+import 'package:flutter_demo_15/model/major.dart';
 
 class MajorItem extends StatelessWidget {
   final Major major;

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_14/json/login.dart';
-<<<<<<< HEAD
 import 'package:flutter_demo_14/ui/login/login_screen.dart';
-=======
->>>>>>> 960df51dca873c1d27a65d60f9f645a6bc567fed
 
 class MyRegister extends StatelessWidget {
   final Function()? onTap;
