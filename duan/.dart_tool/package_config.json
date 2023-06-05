@@ -111,7 +111,7 @@
     },
     {
       "name": "google_fonts",
-      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-2.1.0",
+      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-2.3.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -374,13 +374,13 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "flutter_demo_14",
+      "name": "flutter_demo_35",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-05-29T06:23:13.898247Z",
+  "generated": "2023-06-05T07:37:41.068921Z",
   "generator": "pub",
   "generatorVersion": "2.19.4"
 }

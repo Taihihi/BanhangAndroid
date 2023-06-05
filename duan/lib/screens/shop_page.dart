@@ -1,12 +1,12 @@
 // File: screens/home_page.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_14/models.dart';
-import 'package:flutter_demo_14/screens/product_detail_page.dart';
-import 'package:flutter_demo_14/screens/cart_page.dart';
-import 'package:flutter_demo_14/screens/profile_page.dart';
-import 'package:flutter_demo_14/screens/notification_page.dart';
-import 'package:flutter_demo_14/widgets/product_item.dart';
-import 'package:flutter_demo_14/appmenu.dart';
+import 'package:flutter_demo_35/models.dart';
+import 'package:flutter_demo_35/screens/product_detail_page.dart';
+import 'package:flutter_demo_35/screens/cart_page.dart';
+import 'package:flutter_demo_35/screens/profile_page.dart';
+import 'package:flutter_demo_35/screens/notification_page.dart';
+import 'package:flutter_demo_35/widgets/product_item.dart';
+import 'package:flutter_demo_35/appmenu.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({Key? key}) : super(key: key);
@@ -143,28 +143,28 @@ class _HomePageState extends State<ShopPage> {
               );
             },
           ),
-          // IconButton(
-          //   icon: Icon(Icons.person),
-          //   onPressed: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) => ProfilePage(),
-          //       ),
-          //     );
-          //   },
-          // ),
-          // IconButton(
-          //   icon: Icon(Icons.notifications),
-          //   onPressed: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) => NotificationPage(),
-          //       ),
-          //     );
-          //   },
-          // ),
+          IconButton(
+            icon: Icon(Icons.person),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProfilePage(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.notifications),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NotificationPage(),
+                ),
+              );
+            },
+          ),
         ],
       ),
       drawer: const AppMenu(),

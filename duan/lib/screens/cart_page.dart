@@ -97,7 +97,7 @@
 
 // File: screens/cart_page.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_14/models.dart';
+import 'package:flutter_demo_35/models.dart';
 
 class CartPage extends StatefulWidget {
   final List<CartItem> cartItems;

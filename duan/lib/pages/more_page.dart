@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_14/json/constant.dart';
-import 'package:flutter_demo_14/theme/colors.dart';
+import 'package:flutter_demo_35/json/constant.dart';
+import 'package:flutter_demo_35/theme/colors.dart';
 // import 'package:duan/pages/account_page.dart';
-import 'package:flutter_demo_14/pages/cart_page.dart';
-import 'package:flutter_demo_14/pages/home_page.dart';
-import 'package:flutter_demo_14/pages/more_page.dart';
-import 'package:flutter_demo_14/pages/store_page.dart';
-import 'package:flutter_demo_14/cloles/cloles1.dart';
-import 'package:flutter_demo_14/json/login.dart';
-import 'package:flutter_demo_14/ui/login/login_screen.dart';
-import 'package:flutter_demo_14/appmenu.dart';
+import 'package:flutter_demo_35/pages/cart_page.dart';
+import 'package:flutter_demo_35/pages/home_page.dart';
+import 'package:flutter_demo_35/pages/more_page.dart';
+import 'package:flutter_demo_35/pages/store_page.dart';
+import 'package:flutter_demo_35/cloles/cloles1.dart';
+// import 'package:flutter_demo_35/json/login.dart';
+// import 'package:flutter_demo_35/ui/login/login_screen.dart';
+import 'package:flutter_demo_35/appmenu.dart';
 
 class MorePage extends StatefulWidget {
   const MorePage({Key? key}) : super(key: key);
@@ -192,7 +192,7 @@ class _MorePageState extends State<MorePage> {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
+                          builder: (context) => MorePage(),
                         ),
                         (route) => false);
                   },
