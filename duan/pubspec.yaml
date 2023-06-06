@@ -46,6 +46,7 @@ dependencies:
   flutter_localization: ^0.1.11
   google_fonts: ^2.1.0
   provider:
+  ionicons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
