@@ -1,15 +1,26 @@
-import 'package:flutter/material.dart';
-// import 'package:flutter_demo_14/cloles/cloles6.dart';
-// import 'package:flutter_demo_14/pages/home_page.dart';
-// import 'package:duan/json/getstart.dart';
-// import 'package:duan/test/test1.dart';
-import 'package:flutter_demo_14/json/login.dart';
-// import 'package:flutter_demo_14/appmenu.dart';
-// import 'package:flutter_demo_14/screens/home_page.dart';
+//file main.dart
 
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: LoginPage(),
-  ));
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:duan/widget_tree.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+      ),
+      home: const WidgetTree(),
+    );
+  }
 }

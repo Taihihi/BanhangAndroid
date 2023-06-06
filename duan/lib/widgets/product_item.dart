@@ -1,6 +1,6 @@
 // File: widgets/product_item.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_14/models.dart';
+import 'package:flutter_demo_35/models.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -38,7 +38,7 @@ class ProductItem extends StatelessWidget {
             ),
             SizedBox(height: 4.0),
             Text(
-              '\$${product.price.toStringAsFixed(2)}',
+              '${product.price.toStringAsFixed(2)} đ',
               style: TextStyle(
                 fontSize: 14.0,
                 color: Colors.grey,

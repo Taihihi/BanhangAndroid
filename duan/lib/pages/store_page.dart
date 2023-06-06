@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter_demo_14/json/constant.dart';
-import 'package:flutter_demo_14/theme/colors.dart';
-import 'package:flutter_demo_14/pages/home_page.dart';
+import 'package:flutter_demo_35/json/constant.dart';
+import 'package:flutter_demo_35/theme/colors.dart';
+import 'package:flutter_demo_35/pages/home_page.dart';
 // import 'package:duan/pages/account_page.dart';
-import 'package:flutter_demo_14/pages/cart_page.dart';
-import 'package:flutter_demo_14/pages/home_page.dart';
-import 'package:flutter_demo_14/pages/more_page.dart';
-import 'package:flutter_demo_14/pages/store_page.dart';
-import 'package:flutter_demo_14/cloles/cloles1.dart';
-import 'package:flutter_demo_14/cloles/cloles2.dart';
-import 'package:flutter_demo_14/cloles/cloles3.dart';
-import 'package:flutter_demo_14/cloles/cloles4.dart';
-import 'package:flutter_demo_14/cloles/cloles5.dart';
-import 'package:flutter_demo_14/cloles/cloles6.dart';
-import 'package:flutter_demo_14/appmenu.dart';
+import 'package:flutter_demo_35/pages/cart_page.dart';
+import 'package:flutter_demo_35/pages/home_page.dart';
+import 'package:flutter_demo_35/pages/more_page.dart';
+import 'package:flutter_demo_35/pages/store_page.dart';
+import 'package:flutter_demo_35/cloles/cloles1.dart';
+import 'package:flutter_demo_35/cloles/cloles2.dart';
+import 'package:flutter_demo_35/cloles/cloles3.dart';
+import 'package:flutter_demo_35/cloles/cloles4.dart';
+import 'package:flutter_demo_35/cloles/cloles5.dart';
+import 'package:flutter_demo_35/cloles/cloles6.dart';
+import 'package:flutter_demo_35/appmenu.dart';
 
 class StorePage extends StatefulWidget {
   const StorePage({Key? key}) : super(key: key);
