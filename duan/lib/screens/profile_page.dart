@@ -104,7 +104,7 @@ class ProfilePage extends StatelessWidget {
               ),
               fillColor: Color.fromARGB(255, 255, 255, 255),
               filled: true,
-              labelText: "Full Name",
+              labelText: "TTT",
               hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             ),
             validator: FormBuilderValidators.compose([
@@ -131,7 +131,7 @@ class ProfilePage extends StatelessWidget {
               ),
               fillColor: Color.fromARGB(255, 255, 255, 255),
               filled: true,
-              labelText: "Email",
+              labelText: "ttt@gmail.com",
               hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             ),
             validator: FormBuilderValidators.compose([
@@ -158,7 +158,7 @@ class ProfilePage extends StatelessWidget {
               ),
               fillColor: Color.fromARGB(255, 255, 255, 255),
               filled: true,
-              labelText: "Phone Number",
+              labelText: "1234567890",
               hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             ),
             validator: FormBuilderValidators.compose([
@@ -185,7 +185,7 @@ class ProfilePage extends StatelessWidget {
               ),
               fillColor: Color.fromARGB(255, 255, 255, 255),
               filled: true,
-              labelText: "Password",
+              labelText: "1234567890ttt",
               hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             ),
             validator: FormBuilderValidators.compose([
