@@ -1,8 +1,60 @@
-// file home_page.dart
+// //file home_page.dart
+
+// import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:duan/auth.dart';
+
+// class HomePage extends StatelessWidget {
+//   HomePage({Key? key}) : super(key: key);
+
+//   final User? user = Auth().currentUser;
+
+//   Future<void> signOut() async {
+//     await Auth().signOut();
+//   }
+
+//   Widget _title() {
+//     return const Text('Firebase Auth');
+//   }
+
+//   Widget _userUid() {
+//     return Text(user?.email ?? 'user email');
+//   }
+
+//   Widget _signOutButton() {
+//     return ElevatedButton(
+//       onPressed: signOut,
+//       child: const Text('Sign Out'),
+//     );
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: _title(),
+//       ),
+//       body: Container(
+//         height: double.infinity,
+//         width: double.infinity,
+//         padding: const EdgeInsets.all(20),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.center,
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             _userUid(),
+//             _signOutButton(),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:duan/auth.dart';
+import 'package:duan/pages/login_register.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -21,9 +73,15 @@ class HomePage extends StatelessWidget {
     return Text(user?.email ?? 'user email');
   }
 
-  Widget _signOutButton() {
+  Widget _signOutButton(BuildContext context) {
     return ElevatedButton(
-      onPressed: signOut,
+      onPressed: () {
+        signOut();
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
+      },
       child: const Text('Sign Out'),
     );
   }
@@ -35,14 +93,15 @@ class HomePage extends StatelessWidget {
         title: _title(),
       ),
       body: Container(
-        alignment: Alignment.center,
+        height: double.infinity,
+        width: double.infinity,
         padding: const EdgeInsets.all(20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             _userUid(),
-            const SizedBox(height: 20),
-            _signOutButton(),
+            _signOutButton(context),
           ],
         ),
       ),
