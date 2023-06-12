@@ -97,7 +97,7 @@
 
 // File: screens/cart_page.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_35/models.dart';
+import 'package:duan/models.dart';
 
 class CartPage extends StatefulWidget {
   final List<CartItem> cartItems;
@@ -110,6 +110,10 @@ class CartPage extends StatefulWidget {
 
 class Cart {
   List<CartItem> items = [];
+
+  // void deleteItem(CartItem cartItem) {
+  //   items.removeAt(cartItem);
+  // }
 
   void addItem(CartItem cartItem) {
     items.add(cartItem);
@@ -157,7 +161,7 @@ class _CartPageState extends State<CartPage> {
                 final cartItem = widget.cartItems[index];
 
                 return ListTile(
-                  leading: Image.network(
+                  leading: Image.asset(
                     cartItem.product.image,
                     width: 50,
                     height: 50,
@@ -180,6 +184,13 @@ class _CartPageState extends State<CartPage> {
                         icon: Icon(Icons.add),
                         onPressed: () {
                           incrementQuantity(cartItem);
+                        },
+                      ),
+                      // const Spacer(),
+                      IconButton(
+                        icon: Icon(Icons.delete),
+                        onPressed: () {
+                          // deleteItem(index);
                         },
                       ),
                     ],

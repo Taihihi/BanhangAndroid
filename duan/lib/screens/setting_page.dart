@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_35/json/constant.dart';
-import 'package:flutter_demo_35/theme/colors.dart';
-import 'package:flutter_demo_35/pages/more_page.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:flutter_demo_35/widgets/settings_tile.dart';
+// import 'package:duan/json/constant.dart';
+import 'package:duan/theme/colors.dart';
+import 'package:duan/pages/more_page.dart';
+// import 'package:ionicons/ionicons.dart';
+// import 'package:duan/widgets/settings_tile.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -217,7 +217,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
 // import 'package:flutter/material.dart';
 // import 'package:ionicons/ionicons.dart';
-// import 'package:flutter_demo_35/widgets/settings_tile.dart';
+// import 'package:duan/widgets/settings_tile.dart';
 
 // class SettingsScreen extends StatefulWidget {
 //   const SettingsScreen({Key? key}) : super(key: key);

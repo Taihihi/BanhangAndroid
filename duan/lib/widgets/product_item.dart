@@ -1,6 +1,6 @@
 // File: widgets/product_item.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_35/models.dart';
+import 'package:duan/models.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -23,7 +23,9 @@ class ProductItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Image.network(
+              child: Image.asset(
+                width: 200,
+                height: 50,
                 product.image,
                 fit: BoxFit.cover,
               ),

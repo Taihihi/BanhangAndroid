@@ -22,14 +22,16 @@ PreferredSizeWidget appBar() {
 }
 
 Widget listView() {
-  return ListView.separated(
-      itemBuilder: (context, index) {
-        return ListViewItem(index);
-      },
-      separatorBuilder: (context, index) {
-        return Divider(height: 0);
-      },
-      itemCount: 15);
+  return Container(
+    child: ListView.separated(
+        itemBuilder: (context, index) {
+          return ListViewItem(index);
+        },
+        separatorBuilder: (context, index) {
+          return Divider(height: 0);
+        },
+        itemCount: 5),
+  );
 }
 
 Widget ListViewItem(int index) {
@@ -79,7 +81,7 @@ Widget message(int index) {
       maxLines: 3,
       overflow: TextOverflow.ellipsis,
       text: TextSpan(
-        text: 'Message',
+        text: '',
         style: TextStyle(
           fontSize: textSize,
           color: Colors.black,

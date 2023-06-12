@@ -14,6 +14,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "carousel_slider",
+      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/carousel_slider-4.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "characters",
       "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/characters-1.2.1",
       "packageUri": "lib/",
@@ -81,7 +87,7 @@
     },
     {
       "name": "flutter_localization",
-      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_localization-0.1.11",
+      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_localization-0.1.12",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -130,6 +136,12 @@
     {
       "name": "intl",
       "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "ionicons",
+      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/ionicons-0.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -213,9 +225,9 @@
     },
     {
       "name": "path_provider_windows",
-      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_windows-2.1.6",
+      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_windows-2.1.7",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     },
     {
       "name": "platform",
@@ -249,9 +261,9 @@
     },
     {
       "name": "shared_preferences",
-      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.1.1",
+      "rootUri": "file:///C:/Users/LAPTOP/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     },
     {
       "name": "shared_preferences_android",
@@ -374,13 +386,13 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "flutter_demo_35",
+      "name": "duan",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-06-05T07:37:41.068921Z",
+  "generated": "2023-06-12T11:25:15.209957Z",
   "generator": "pub",
   "generatorVersion": "2.19.4"
 }

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_35/json/constant.dart';
-import 'package:flutter_demo_35/theme/colors.dart';
+import 'package:duan/json/constant.dart';
+import 'package:duan/theme/colors.dart';
 // import 'package:duan/pages/account_page.dart';
-import 'package:flutter_demo_35/pages/cart_page.dart';
-import 'package:flutter_demo_35/pages/home_page.dart';
-import 'package:flutter_demo_35/pages/more_page.dart';
-import 'package:flutter_demo_35/pages/store_page.dart';
-import 'package:flutter_demo_35/cloles/cloles1.dart';
-// import 'package:flutter_demo_35/json/login.dart';
-// import 'package:flutter_demo_35/ui/login/login_screen.dart';
-import 'package:flutter_demo_35/appmenu.dart';
+import 'package:duan/screens/cart_page.dart';
+import 'package:duan/pages/home_page.dart';
+// import 'package:duan/pages/more_page.dart';
+import 'package:duan/screens/shop_page.dart';
+// import 'package:duan/cloles/cloles1.dart';
+// import 'package:duan/json/login.dart';
+// import 'package:duan/ui/login/login_screen.dart';
+import 'package:duan/appmenu.dart';
+import 'package:duan/screens/setting_page.dart';
+// import 'package:duan/screens/profile_page.dart';
 
 class MorePage extends StatefulWidget {
   const MorePage({Key? key}) : super(key: key);
@@ -114,7 +116,7 @@ class _MorePageState extends State<MorePage> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                        image: NetworkImage(profileUrl), fit: BoxFit.cover)),
+                        image: AssetImage(profileUrl), fit: BoxFit.cover)),
               ),
               SizedBox(
                 width: 20,
@@ -147,19 +149,115 @@ class _MorePageState extends State<MorePage> {
           height: 30,
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 25, right: 25),
-          child: Column(
+            padding: const EdgeInsets.only(left: 25, right: 25),
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: List.generate(menusMore.length, (index) {
-                return Padding(
+              // children: List.generate(menusMore.length, (index) {
+              children: [
+                Padding(
                   padding: const EdgeInsets.only(bottom: 40),
-                  child: Text(
-                    menusMore[index],
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 23),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ),
+                          (route) => false);
+                    },
+                    child: Container(
+                      child: Text(
+                        "Home",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 23),
+                      ),
+                    ),
                   ),
-                );
-              })),
-        ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 40),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ShopPage(),
+                          ),
+                          (route) => false);
+                    },
+                    child: Container(
+                      child: Text(
+                        "Shop",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 23),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 40),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CartPage(
+                              cartItems: [],
+                            ),
+                          ),
+                          (route) => false);
+                    },
+                    child: Container(
+                      child: Text(
+                        "Cart",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 23),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 40),
+                  child: GestureDetector(
+                    onTap: () {
+                      // Navigator.pushAndRemoveUntil(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //       builder: (context) => ProfilePage(),
+                      //     ),
+                      //     (route) => false);
+                    },
+                    child: Container(
+                      child: Text(
+                        "Profile",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 23),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 40),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SettingsScreen(),
+                          ),
+                          (route) => false);
+                    },
+                    child: Container(
+                      child: Text(
+                        "Notification",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 23),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )),
         Padding(
           padding: const EdgeInsets.only(left: 25, right: 25),
           child: Row(
@@ -170,7 +268,7 @@ class _MorePageState extends State<MorePage> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => SettingsScreen(),
                       ),
                       (route) => false);
                 },

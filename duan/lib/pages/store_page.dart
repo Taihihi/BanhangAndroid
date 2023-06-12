@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter_demo_35/json/constant.dart';
-import 'package:flutter_demo_35/theme/colors.dart';
-import 'package:flutter_demo_35/pages/home_page.dart';
-// import 'package:duan/pages/account_page.dart';
-import 'package:flutter_demo_35/pages/cart_page.dart';
-import 'package:flutter_demo_35/pages/home_page.dart';
-import 'package:flutter_demo_35/pages/more_page.dart';
-import 'package:flutter_demo_35/pages/store_page.dart';
-import 'package:flutter_demo_35/cloles/cloles1.dart';
-import 'package:flutter_demo_35/cloles/cloles2.dart';
-import 'package:flutter_demo_35/cloles/cloles3.dart';
-import 'package:flutter_demo_35/cloles/cloles4.dart';
-import 'package:flutter_demo_35/cloles/cloles5.dart';
-import 'package:flutter_demo_35/cloles/cloles6.dart';
-import 'package:flutter_demo_35/appmenu.dart';
+import 'package:duan/json/constant.dart';
+import 'package:duan/theme/colors.dart';
+// import 'package:duan/pages/home_page.dart';
+// // import 'package:duan/pages/account_page.dart';
+// import 'package:duan/pages/cart_page.dart';
+// import 'package:duan/pages/home_page.dart';
+// import 'package:duan/pages/more_page.dart';
+// import 'package:duan/pages/store_page.dart';
+import 'package:duan/cloles/cloles1.dart';
+import 'package:duan/cloles/cloles2.dart';
+import 'package:duan/cloles/cloles3.dart';
+import 'package:duan/cloles/cloles4.dart';
+import 'package:duan/cloles/cloles5.dart';
+import 'package:duan/cloles/cloles6.dart';
+import 'package:duan/appmenu.dart';
 
 class StorePage extends StatefulWidget {
   const StorePage({Key? key}) : super(key: key);
@@ -31,78 +31,6 @@ class _StorePageState extends State<StorePage> {
       body: getBody(),
       appBar: AppBar(title: const Text('Cloles')),
       drawer: const AppMenu(),
-      // drawer: Drawer(
-      //   child: ListView(
-      //     padding: EdgeInsets.zero,
-      //     children: [
-      //       const DrawerHeader(
-      //         decoration: BoxDecoration(color: Colors.lightBlue),
-      //         child: Text('Cloles',
-      //             textScaleFactor: 1.5, style: TextStyle(color: Colors.white)),
-      //       ),
-      //       ListTile(
-      //         leading: const Icon(Icons.home),
-      //         title: const Text("Home"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => HomePage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      //       ListTile(
-      //         leading: const Icon(Icons.shop),
-      //         title: const Text("Shop"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => StorePage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      // ListTile(
-      //   leading: const Icon(Icons.verified_user),
-      //   title: const Text("Account"),
-      //   onTap: () {
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) => AccountPage(),
-      //       ),
-      //     );
-      //   },
-      // ),
-      //       ListTile(
-      //         leading: const Icon(Icons.shopping_cart),
-      //         title: const Text("Cart"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => CartPage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      //       ListTile(
-      //         leading: const Icon(Icons.more_horiz),
-      //         title: const Text("More"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => MorePage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      //     ],
-      //   ),
-      // ),
     );
   }
 
@@ -114,32 +42,9 @@ class _StorePageState extends State<StorePage> {
             padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                // Text(
-                //   "Phnom Penh",
-                //   style: TextStyle(fontSize: 16),
-                // ),
-                // SizedBox(
-                //   width: 10,
-                // ),
-                // Icon(
-                //   Icons.map,
-                //   size: 20,
-                // )
-              ],
+              children: [],
             ),
           ),
-          // SizedBox(
-          //   height: 40,
-          // ),
-          // Padding(
-          //   padding: const EdgeInsets.only(left: 20, right: 20),
-          //   child: Text(
-          //     "Find all stores here",
-          //     style: TextStyle(
-          //         fontSize: 30, height: 1.5, fontWeight: FontWeight.w400),
-          //   ),
-          // ),
           SizedBox(
             height: 20,
           ),
@@ -232,8 +137,8 @@ class _StorePageState extends State<StorePage> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(1),
                                     image: DecorationImage(
-                                        image: NetworkImage(
-                                            storeList[index]['img']),
+                                        image:
+                                            AssetImage(storeList[index]['img']),
                                         fit: BoxFit.cover)),
                               ),
                             ),
@@ -262,23 +167,6 @@ class _StorePageState extends State<StorePage> {
                                         color: grey,
                                         height: 1.5),
                                   ),
-                                  // ElevatedButton(
-                                  //     onPressed: () {
-                                  //       Navigator.pushAndRemoveUntil(
-                                  //           context,
-                                  //           MaterialPageRoute(
-                                  //             builder: (context) => Cloles1(),
-                                  //           ),
-                                  //           (route) => false);
-                                  //     },
-                                  //     child: Align(
-                                  //       alignment: Alignment.topRight,
-                                  //       child: const Text('Buy Now >>>',
-                                  //           style: TextStyle(
-                                  //               fontSize: 10,
-                                  //               color: white,
-                                  //               fontWeight: FontWeight.bold)),
-                                  //     ))
                                 ],
                               ),
                             )
@@ -311,7 +199,7 @@ class _StorePageState extends State<StorePage> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(1),
                                         image: DecorationImage(
-                                            image: NetworkImage(
+                                            image: AssetImage(
                                                 storeList2[index]['img']),
                                             fit: BoxFit.cover)),
                                   ),
@@ -342,25 +230,6 @@ class _StorePageState extends State<StorePage> {
                                             color: grey,
                                             height: 1.5),
                                       ),
-                                      // ElevatedButton(
-                                      //     onPressed: () {
-                                      //       Navigator.pushAndRemoveUntil(
-                                      //           context,
-                                      //           MaterialPageRoute(
-                                      //             builder: (context) =>
-                                      //                 Cloles2(),
-                                      //           ),
-                                      //           (route) => false);
-                                      //     },
-                                      //     child: Align(
-                                      //       alignment: Alignment.topRight,
-                                      //       child: const Text('Buy Now >>>',
-                                      //           style: TextStyle(
-                                      //               fontSize: 10,
-                                      //               color: white,
-                                      //               fontWeight:
-                                      //                   FontWeight.bold)),
-                                      //     ))
                                     ],
                                   ),
                                 )
@@ -399,7 +268,7 @@ class _StorePageState extends State<StorePage> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(1),
                                     image: DecorationImage(
-                                        image: NetworkImage(
+                                        image: AssetImage(
                                             storeList3[index]['img']),
                                         fit: BoxFit.cover)),
                               ),
@@ -429,23 +298,6 @@ class _StorePageState extends State<StorePage> {
                                         color: grey,
                                         height: 1.5),
                                   ),
-                                  // ElevatedButton(
-                                  //     onPressed: () {
-                                  //       Navigator.pushAndRemoveUntil(
-                                  //           context,
-                                  //           MaterialPageRoute(
-                                  //             builder: (context) => Cloles3(),
-                                  //           ),
-                                  //           (route) => false);
-                                  //     },
-                                  //     child: Align(
-                                  //       alignment: Alignment.topRight,
-                                  //       child: const Text('Buy Now >>>',
-                                  //           style: TextStyle(
-                                  //               fontSize: 10,
-                                  //               color: white,
-                                  //               fontWeight: FontWeight.bold)),
-                                  //     ))
                                 ],
                               ),
                             )
@@ -478,7 +330,7 @@ class _StorePageState extends State<StorePage> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(1),
                                         image: DecorationImage(
-                                            image: NetworkImage(
+                                            image: AssetImage(
                                                 storeList4[index]['img']),
                                             fit: BoxFit.cover)),
                                   ),
@@ -509,25 +361,6 @@ class _StorePageState extends State<StorePage> {
                                             color: grey,
                                             height: 1.5),
                                       ),
-                                      // ElevatedButton(
-                                      //     onPressed: () {
-                                      //       Navigator.pushAndRemoveUntil(
-                                      //           context,
-                                      //           MaterialPageRoute(
-                                      //             builder: (context) =>
-                                      //                 Cloles4(),
-                                      //           ),
-                                      //           (route) => false);
-                                      //     },
-                                      //     child: Align(
-                                      //       alignment: Alignment.topRight,
-                                      //       child: const Text('Buy Now >>>',
-                                      //           style: TextStyle(
-                                      //               fontSize: 10,
-                                      //               color: white,
-                                      //               fontWeight:
-                                      //                   FontWeight.bold)),
-                                      //     ))
                                     ],
                                   ),
                                 )
@@ -566,7 +399,7 @@ class _StorePageState extends State<StorePage> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(1),
                                     image: DecorationImage(
-                                        image: NetworkImage(
+                                        image: AssetImage(
                                             storeList5[index]['img']),
                                         fit: BoxFit.cover)),
                               ),
@@ -596,23 +429,6 @@ class _StorePageState extends State<StorePage> {
                                         color: grey,
                                         height: 1.5),
                                   ),
-                                  // ElevatedButton(
-                                  //     onPressed: () {
-                                  //       Navigator.pushAndRemoveUntil(
-                                  //           context,
-                                  //           MaterialPageRoute(
-                                  //             builder: (context) => Cloles5(),
-                                  //           ),
-                                  //           (route) => false);
-                                  //     },
-                                  //     child: Align(
-                                  //       alignment: Alignment.topRight,
-                                  //       child: const Text('Buy Now >>>',
-                                  //           style: TextStyle(
-                                  //               fontSize: 10,
-                                  //               color: white,
-                                  //               fontWeight: FontWeight.bold)),
-                                  //     ))
                                 ],
                               ),
                             )
@@ -645,7 +461,7 @@ class _StorePageState extends State<StorePage> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(1),
                                         image: DecorationImage(
-                                            image: NetworkImage(
+                                            image: AssetImage(
                                                 storeList6[index]['img']),
                                             fit: BoxFit.cover)),
                                   ),
@@ -676,25 +492,6 @@ class _StorePageState extends State<StorePage> {
                                             color: grey,
                                             height: 1.5),
                                       ),
-                                      // ElevatedButton(
-                                      //     onPressed: () {
-                                      //       Navigator.pushAndRemoveUntil(
-                                      //           context,
-                                      //           MaterialPageRoute(
-                                      //             builder: (context) =>
-                                      //                 Cloles6(),
-                                      //           ),
-                                      //           (route) => false);
-                                      //     },
-                                      //     child: Align(
-                                      //       alignment: Alignment.topRight,
-                                      //       child: const Text('Buy Now >>>',
-                                      //           style: TextStyle(
-                                      //               fontSize: 10,
-                                      //               color: white,
-                                      //               fontWeight:
-                                      //                   FontWeight.bold)),
-                                      //     ))
                                     ],
                                   ),
                                 )

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_demo_35/json/constant.dart';
-import 'package:flutter_demo_35/theme/colors.dart';
-import 'package:flutter_demo_35/widgets/custom_slider.dart';
-// import 'package:flutter_demo_35/pages/account_page.dart';
-import 'package:flutter_demo_35/pages/cart_page.dart';
-import 'package:flutter_demo_35/pages/home_page.dart';
-import 'package:flutter_demo_35/pages/more_page.dart';
-import 'package:flutter_demo_35/pages/store_page.dart';
+import 'package:duan/json/constant.dart';
+import 'package:duan/theme/colors.dart';
+// import 'package:duan/widgets/custom_slider.dart';
+// // import 'package:duan/pages/account_page.dart';
+// import 'package:duan/pages/cart_page.dart';
+// import 'package:duan/pages/home_page.dart';
+// import 'package:duan/pages/more_page.dart';
+import 'package:duan/pages/store_page.dart';
 
 class Cloles5 extends StatefulWidget {
   @override

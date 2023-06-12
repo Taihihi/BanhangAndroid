@@ -1,6 +1,6 @@
 // import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_35/theme/colors.dart';
+import 'package:duan/theme/colors.dart';
 
 class CustomeCarouselHomePage extends StatefulWidget {
   // final List<String> items;
@@ -43,7 +43,7 @@ class _CustomeCarouselHomePageState extends State<CustomeCarouselHomePage> {
                       Container(
                         width: MediaQuery.of(context).size.width,
                         child: Image(
-                          image: NetworkImage(item),
+                          image: AssetImage(item),
                           fit: BoxFit.cover,
                         ),
                       ),

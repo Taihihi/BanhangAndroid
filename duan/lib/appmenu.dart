@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_35/pages/home_page.dart';
-import 'package:flutter_demo_35/pages/more_page.dart';
-// import 'package:flutter_demo_35/pages/root_app.dart';
-// import 'package:flutter_demo_35/pages/cart_page.dart';
-// import 'package:flutter_demo_35/pages/store_page.dart';
+import 'package:duan/pages/home_page.dart';
+import 'package:duan/pages/more_page.dart';
+// import 'package:duan/pages/root_app.dart';
+// import 'package:duan/pages/cart_page.dart';
+// import 'package:duan/pages/store_page.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:flutter_demo_35/screens/shop_page.dart';
+import 'package:duan/screens/shop_page.dart';
 
 class AppMenu extends StatefulWidget {
   const AppMenu({super.key});
