@@ -1,16 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:duan/json/constant.dart';
-import 'package:duan/theme/colors.dart';
 import 'package:duan/pages/more_page.dart';
-// import 'package:ionicons/ionicons.dart';
-// import 'package:duan/widgets/settings_tile.dart';
 
-class SettingsScreen extends StatefulWidget {
+class SettingsPage extends StatefulWidget {
   @override
-  State<SettingsScreen> createState() => _SettingsScreenState();
+  _SettingsPageState createState() => _SettingsPageState();
 }
 
-class _SettingsScreenState extends State<SettingsScreen> {
+class _SettingsPageState extends State<SettingsPage> {
   bool _isOn = false;
   bool _isOn1 = false;
   bool _isOn2 = false;
@@ -18,8 +15,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
-      body: getBody(),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Settings'),
         leading: IconButton(
@@ -36,260 +32,208 @@ class _SettingsScreenState extends State<SettingsScreen> {
           },
         ),
       ),
+      body: Container(
+        padding: EdgeInsets.only(left: 16, top: 25, right: 16),
+        child: ListView(
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.person,
+                  color: Colors.green,
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Text(
+                  "Account",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            Divider(
+              height: 15,
+              thickness: 2,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            buildAccountOptionRow(context, "Change Password"),
+            buildAccountOptionRow(context, "Content Settings"),
+            buildAccountOptionRow(context, "Social"),
+            buildAccountOptionRow(context, "Language"),
+            buildAccountOptionRow(context, "Privacy And Security"),
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.volume_up_outlined,
+                  color: Colors.green,
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Text(
+                  "Notifications",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            Divider(
+              height: 15,
+              thickness: 2,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                const Text(
+                  'Theme',
+                  style: TextStyle(fontSize: 24),
+                ),
+                const Spacer(),
+                Switch(
+                    value: _isOn,
+                    onChanged: (bool? value) {
+                      setState(() => _isOn = value!);
+                    })
+              ],
+            ),
+            Row(
+              children: [
+                const Text(
+                  'New For You',
+                  style: TextStyle(fontSize: 24),
+                ),
+                const Spacer(),
+                Switch(
+                    value: _isOn1,
+                    onChanged: (bool? value) {
+                      setState(() => _isOn1 = value!);
+                    })
+              ],
+            ),
+            Row(
+              children: [
+                const Text(
+                  'Account Activity',
+                  style: TextStyle(fontSize: 24),
+                ),
+                const Spacer(),
+                Switch(
+                    value: _isOn2,
+                    onChanged: (bool? value) {
+                      setState(() => _isOn2 = value!);
+                    })
+              ],
+            ),
+            Row(
+              children: [
+                const Text(
+                  'Opportunity',
+                  style: TextStyle(fontSize: 24),
+                ),
+                const Spacer(),
+                Switch(
+                    value: _isOn3,
+                    onChanged: (bool? value) {
+                      setState(() => _isOn3 = value!);
+                    })
+              ],
+            ),
+            // buildNotificationOptionRow("New For You", true),
+            // buildNotificationOptionRow("Account Activity", true),
+            // buildNotificationOptionRow("Opportunity", false),
+            SizedBox(
+              height: 50,
+            ),
+          ],
+        ),
+      ),
     );
   }
 
-  Widget getBody() {
-    var size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // const Text(
-              //   "Settings",
-              //   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              // ),
-              const SizedBox(height: 40),
-              Row(
-                children: [
-                  // Icon(
-                  //   Icons.person,
-                  //   color: Colors.blue,
-                  //   size: 45,
-                  // ),
-                  // const Spacer(
-                  //   flex: 1,
-                  // ),
-                  const Text(
-                    'Account Active',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  const Spacer(),
-                  Switch(
-                      value: _isOn,
-                      onChanged: (bool? value) {
-                        setState(() => _isOn = value!);
-                      })
-                  // SettingsTile(
-                  //   color: Colors.blue,
-                  //   icon: Ionicons.person_circle_outline,
-                  //   title: "Account",
-                  //   onTap: () {},
-                  // ),
+  Row buildNotificationOptionRow(String title, bool isActive) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey[600]),
+        ),
+        Transform.scale(
+            scale: 0.7,
+            child: CupertinoSwitch(
+              value: isActive,
+              onChanged: (bool val) {},
+            ))
+      ],
+    );
+  }
+
+  GestureDetector buildAccountOptionRow(BuildContext context, String title) {
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text(title),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text("Option 1"),
+                    Text("Option 2"),
+                    Text("Option 3"),
+                  ],
+                ),
+                actions: [
+                  FlatButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text("Close")),
                 ],
+              );
+            });
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey[600],
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  // Icon(
-                  //   Icons.edit,
-                  //   color: Colors.blue,
-                  //   size: 45,
-                  // ),
-                  // const Spacer(
-                  //   flex: 1,
-                  // ),
-                  const Text(
-                    'Sound',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  const Spacer(),
-                  Switch(
-                      value: _isOn1,
-                      onChanged: (bool? value) {
-                        setState(() => _isOn1 = value!);
-                      })
-                ],
-              ),
-              // SettingsTile(
-              //   color: Colors.green,
-              //   icon: Ionicons.pencil_outline,
-              //   title: "Edit Information",
-              //   onTap: () {},
-              // ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  // Icon(
-                  //   Icons.dark_mode,
-                  //   color: Colors.blue,
-                  //   size: 45,
-                  // ),
-                  // const Spacer(
-                  //   flex: 1,
-                  // ),
-                  const Text(
-                    'Theme Dark',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  const Spacer(),
-                  Switch(
-                      value: _isOn2,
-                      onChanged: (bool? value) {
-                        setState(() => _isOn2 = value!);
-                      })
-                ],
-              ),
-              // SettingsTile(
-              //   color: Colors.black,
-              //   icon: Ionicons.moon_outline,
-              //   title: "Theme",
-              //   onTap: () {},
-              // ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  // Icon(
-                  //   Icons.translate,
-                  //   color: Colors.blue,
-                  //   size: 45,
-                  // ),
-                  // const Spacer(
-                  //   flex: 1,
-                  // ),
-                  const Text(
-                    'Opportunity',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  const Spacer(),
-                  Switch(
-                      value: _isOn3,
-                      onChanged: (bool? value) {
-                        setState(() => _isOn3 = value!);
-                      })
-                ],
-              ),
-              // SettingsTile(
-              //   color: Colors.purple,
-              //   icon: Ionicons.language_outline,
-              //   title: "Language",
-              //   onTap: () {},
-              // ),
-              const SizedBox(
-                height: 40,
-              ),
-              // Row(
-              //   children: [
-              //     Icon(
-              //       Icons.language,
-              //       color: Colors.blue,
-              //       size: 45,
-              //     ),
-              //     const Spacer(
-              //       flex: 1,
-              //     ),
-              //     const Text(
-              //       'Language',
-              //       style: TextStyle(fontSize: 24),
-              //     ),
-              //     const Spacer(),
-              //     Switch(
-              //         value: _isOn,
-              //         onChanged: (bool? value) {
-              //           setState(() => _isOn = value!);
-              //         })
-              //   ],
-              // ),
-              // SettingsTile(
-              //   color: Colors.red,
-              //   icon: Ionicons.log_out_outline,
-              //   title: "Logout",
-              //   onTap: () {},
-              // ),
-            ],
-          ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.grey,
+            ),
+          ],
         ),
       ),
     );
   }
 }
 
+OutlineButton(
+    {required EdgeInsets padding,
+    required RoundedRectangleBorder shape,
+    required Null Function() onPressed,
+    required Text child}) {}
 
-
-// import 'package:flutter/material.dart';
-// import 'package:ionicons/ionicons.dart';
-// import 'package:duan/widgets/settings_tile.dart';
-
-// class SettingsScreen extends StatefulWidget {
-//   const SettingsScreen({Key? key}) : super(key: key);
-
-//   @override
-//   State<SettingsScreen> createState() => _SettingsScreenState();
-// }
-
-// class _SettingsScreenState extends State<SettingsScreen> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Settings'),
-//       ),
-//       body: SafeArea(
-//         child: Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               const Text(
-//                 "Settings",
-//                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-//               ),
-//               const SizedBox(height: 40),
-//               SettingsTile(
-//                 color: Colors.blue,
-//                 icon: Ionicons.person_circle_outline,
-//                 title: "Account",
-//                 onTap: () {},
-//               ),
-//               const SizedBox(
-//                 height: 10,
-//               ),
-//               SettingsTile(
-//                 color: Colors.green,
-//                 icon: Ionicons.pencil_outline,
-//                 title: "Edit Information",
-//                 onTap: () {},
-//               ),
-//               const SizedBox(
-//                 height: 40,
-//               ),
-//               SettingsTile(
-//                 color: Colors.black,
-//                 icon: Ionicons.moon_outline,
-//                 title: "Theme",
-//                 onTap: () {},
-//               ),
-//               const SizedBox(
-//                 height: 10,
-//               ),
-//               SettingsTile(
-//                 color: Colors.purple,
-//                 icon: Ionicons.language_outline,
-//                 title: "Language",
-//                 onTap: () {},
-//               ),
-//               const SizedBox(
-//                 height: 40,
-//               ),
-//               SettingsTile(
-//                 color: Colors.red,
-//                 icon: Ionicons.log_out_outline,
-//                 title: "Logout",
-//                 onTap: () {},
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+FlatButton({required Null Function() onPressed, required Text child}) {}

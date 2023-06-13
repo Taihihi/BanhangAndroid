@@ -3,20 +3,33 @@ import 'package:duan/json/constant.dart';
 import 'package:duan/theme/colors.dart';
 import 'package:duan/screens/notification_page.dart';
 import 'package:duan/appmenu.dart';
-import 'package:duan/cloles/cloles7.dart';
-import 'package:duan/cloles/cloles8.dart';
-import 'package:duan/cloles/cloles9.dart';
-import 'package:duan/cloles/closes10.dart';
-import 'package:duan/cloles/closes11.dart';
-import 'package:duan/cloles/closes12.dart';
-import 'package:duan/cloles/closes13.dart';
-import 'package:duan/cloles/closes14.dart';
+import 'package:duan/cloles/cloles1.dart';
+import 'package:duan/cloles/cloles2.dart';
+import 'package:duan/cloles/cloles3.dart';
+import 'package:duan/cloles/closes4.dart';
+import 'package:duan/cloles/closes5.dart';
+import 'package:duan/cloles/closes6.dart';
+import 'package:duan/cloles/closes7.dart';
+import 'package:duan/cloles/closes8.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:duan/models.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
   @override
   State<HomePage> createState() => _HomePageState();
+}
+
+class Cart {
+  List<CartItem> items = [];
+
+  // void deleteItem(CartItem cartItem) {
+  //   items.removeAt(cartItem);
+  // }
+
+  void addItem(CartItem cartItem) {
+    items.add(cartItem);
+  }
 }
 
 class _HomePageState extends State<HomePage> {
@@ -33,41 +46,6 @@ class _HomePageState extends State<HomePage> {
       body: getBody(),
       appBar: AppBar(
         title: const Text('SHOP TTT'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.shopping_cart),
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => CartPage(cartItems: cartItems),
-              //   ),
-              // );
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => ProfilePage(),
-              //   ),
-              // );
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.notifications),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => NotificationPage(),
-                ),
-              );
-            },
-          ),
-        ],
       ),
       drawer: const AppMenu(),
     );
@@ -165,19 +143,6 @@ class _HomePageState extends State<HomePage> {
             children: [
               Text("Đề Xuất Cho Bạn",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              // Row(
-              //   children: [
-              //     Text("All", style: TextStyle(color: grey)),
-              //     SizedBox(
-              //       width: 5,
-              //     ),
-              //     Icon(
-              //       Icons.arrow_forward_ios,
-              //       color: grey,
-              //       size: 16,
-              //     )
-              //   ],
-              // )
             ],
           ),
         ),
@@ -202,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                               Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Cloles7(),
+                                    builder: (context) => Cloles1(),
                                   ),
                                   (route) => false);
                             },
@@ -264,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Cloles8(),
+                                        builder: (context) => Cloles2(),
                                       ),
                                       (route) => false);
                                 },
@@ -332,7 +297,7 @@ class _HomePageState extends State<HomePage> {
                               Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Cloles9(),
+                                    builder: (context) => Cloles3(),
                                   ),
                                   (route) => false);
                             },
@@ -394,7 +359,7 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Cloles10(),
+                                        builder: (context) => Cloles4(),
                                       ),
                                       (route) => false);
                                 },
@@ -454,9 +419,6 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           height: 40,
         ),
-        // CustomeCarouselHomePage(
-        //   items: slider,
-        // ),
         SizedBox(
           height: 40,
         ),
@@ -467,19 +429,6 @@ class _HomePageState extends State<HomePage> {
             children: [
               Text("Xem Gần Đây",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              // Row(
-              //   children: [
-              //     Text("All", style: TextStyle(color: grey)),
-              //     SizedBox(
-              //       width: 5,
-              //     ),
-              //     Icon(
-              //       Icons.arrow_forward_ios,
-              //       color: grey,
-              //       size: 16,
-              //     )
-              //   ],
-              // )
             ],
           ),
         ),
@@ -504,7 +453,7 @@ class _HomePageState extends State<HomePage> {
                               Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Cloles11(),
+                                    builder: (context) => Cloles5(),
                                   ),
                                   (route) => false);
                             },
@@ -566,7 +515,7 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Cloles12(),
+                                        builder: (context) => Cloles6(),
                                       ),
                                       (route) => false);
                                 },
@@ -634,7 +583,7 @@ class _HomePageState extends State<HomePage> {
                               Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Cloles13(),
+                                    builder: (context) => Cloles7(),
                                   ),
                                   (route) => false);
                             },
@@ -696,7 +645,7 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Cloles14(),
+                                        builder: (context) => Cloles8(),
                                       ),
                                       (route) => false);
                                 },
@@ -762,8 +711,4 @@ class _HomePageState extends State<HomePage> {
       ],
     );
   }
-}
-
-class Feather {
-  static IconData? search;
 }

@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_icons/flutter_icons.dart';
 import 'package:duan/json/constant.dart';
 import 'package:duan/theme/colors.dart';
-// import 'package:duan/widgets/custom_slider.dart';
-// import 'package:duan/pages/account_page.dart';
-// import 'package:duan/pages/cart_page.dart';
-// import 'package:duan/pages/home_page.dart';
-// import 'package:duan/pages/more_page.dart';
-import 'package:duan/pages/store_page.dart';
+import 'package:duan/pages/home_page.dart';
 
 class Cloles2 extends StatefulWidget {
   @override
@@ -15,6 +9,21 @@ class Cloles2 extends StatefulWidget {
 }
 
 class _HomePageState extends State<Cloles2> {
+  int quantity = 1;
+  void _decreaseQuantity() {
+    setState(() {
+      if (quantity > 0) {
+        quantity--;
+      }
+    });
+  }
+
+  void _increaseQuantity() {
+    setState(() {
+      quantity++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +39,7 @@ class _HomePageState extends State<Cloles2> {
             Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => StorePage(),
+                  builder: (context) => HomePage(),
                 ),
                 (route) => false);
           },
@@ -47,7 +56,7 @@ class _HomePageState extends State<Cloles2> {
         Stack(
           children: [
             Column(
-                children: List.generate(storeList2.length, (index) {
+                children: List.generate(recommends2.length, (index) {
               return Padding(
                 padding: const EdgeInsets.only(left: 0, right: 0, bottom: 0),
                 child: Container(
@@ -58,7 +67,8 @@ class _HomePageState extends State<Cloles2> {
                         height: 500,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: NetworkImage(storeList2[index]['img']),
+                                image:
+                                    NetworkImage(recommends2[index]['imgUrl']),
                                 fit: BoxFit.cover)),
                       ),
                     ],
@@ -81,140 +91,117 @@ class _HomePageState extends State<Cloles2> {
         SizedBox(
           height: 0,
         ),
-        Container(
-          margin: EdgeInsets.only(top: 0),
-          padding: EdgeInsets.only(
-            top: 40,
-            left: 40,
-            right: 20,
-          ),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(24),
-              topRight: Radius.circular(24),
+        Column(
+            children: List.generate(recommends2.length, (index) {
+          return Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  recommends2[index]['title'],
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 0),
+                  child: Text(
+                    'Price: ${recommends2[index]['price']} VND',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Quantity:',
+                        style: TextStyle(fontSize: 18.0),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.remove),
+                        onPressed: _decreaseQuantity,
+                      ),
+                      Text(
+                        quantity.toString(),
+                        style: TextStyle(fontSize: 14.0),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.add),
+                        onPressed: _increaseQuantity,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Rating: ${recommends2[index]['rating']}',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(width: 10.0),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                      ),
+                      SizedBox(width: 5.0),
+                      Text(
+                        '(${recommends2[index]['reviews']} reviews)',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 0),
+                  child: Text(
+                    'Description:',
+                    style:
+                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    recommends2[index]['description'],
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                ),
+                // Text(
+                //   recommends2[index]['description'],
+                //   style: TextStyle(fontSize: 16.0),
+                // ),
+                SizedBox(height: 16.0),
+                SizedBox(height: 20.0),
+                Center(
+                  child: ElevatedButton(
+                    child: Text('Add to Cart'),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
             ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              RichText(
-                text: TextSpan(
-                  style: TextStyle(color: Colors.blue),
-                  children: [
-                    TextSpan(text: "\nPrice\n"),
-                    TextSpan(
-                        text: "70.000",
-                        style: Theme.of(context).textTheme.headline5
-                        // .copyWith(fontWeight: FontWeight.bold),
-                        )
-                  ],
-                ),
-              ),
-              RichText(
-                text: TextSpan(
-                  style: TextStyle(color: Colors.blue),
-                  children: [
-                    TextSpan(text: "\nSize\n"),
-                    TextSpan(
-                        text: "M", style: Theme.of(context).textTheme.headline5
-                        // .copyWith(fontWeight: FontWeight.bold),
-                        )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(),
-                child: Text(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-                  style: TextStyle(height: 1.5),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(right: 0),
-                      height: 54,
-                      width: 58,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(18),
-                        border: Border.all(
-                          color: Colors.blue,
-                        ),
-                      ),
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.shopping_cart,
-                          color: Colors.blue,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    // Expanded(
-                    Container(
-                      width: (size.width - 100) / 2,
-                      height: 50,
-                      decoration: BoxDecoration(
-                          color: black,
-                          borderRadius: BorderRadius.circular(30)),
-                      child: Center(
-                        child: Text(
-                          "Buy Now",
-                          style: TextStyle(fontSize: 15, color: white),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+          );
+        })),
       ],
-    );
-  }
-}
-
-class Feather {
-  static IconData? search;
-}
-
-class ColorDot extends StatelessWidget {
-  final color;
-  final bool isSelected;
-  const ColorDot({
-    Key? key,
-    this.color,
-    this.isSelected = false,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(),
-      padding: EdgeInsets.all(2.5),
-      height: 24,
-      width: 24,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: isSelected ? color : Colors.transparent,
-        ),
-      ),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: color,
-          shape: BoxShape.circle,
-        ),
-      ),
     );
   }
 }

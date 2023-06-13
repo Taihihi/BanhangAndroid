@@ -8,7 +8,7 @@ class Product {
   final String description;
   final String rating;
   final String reviews;
-  // int quantity;
+  int quantity;
 
   Product({
     required this.id,
@@ -18,7 +18,7 @@ class Product {
     required this.description,
     required this.rating,
     required this.reviews,
-    // this.quantity = 1,
+    this.quantity = 1,
   });
 }
 
@@ -31,5 +31,17 @@ class CartItem {
     required this.id,
     required this.product,
     required this.quantity,
+  });
+}
+
+class Products {
+  final String idNotification;
+  final String nameNotification;
+  final String descriptionNotification;
+
+  Products({
+    required this.idNotification,
+    required this.nameNotification,
+    required this.descriptionNotification,
   });
 }

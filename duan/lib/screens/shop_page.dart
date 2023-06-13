@@ -6,6 +6,7 @@ import 'package:duan/screens/product_detail_page.dart';
 import 'package:duan/screens/cart_page.dart';
 import 'package:duan/screens/notification_page.dart';
 import 'package:duan/widgets/product_item.dart';
+import 'package:duan/screens/profile_page.dart';
 import 'package:duan/appmenu.dart';
 
 class ShopPage extends StatefulWidget {
@@ -168,12 +169,12 @@ class _HomePageState extends State<ShopPage> {
           IconButton(
             icon: Icon(Icons.person),
             onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => ProfilePage(),
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProfilePage(),
+                ),
+              );
             },
           ),
           IconButton(

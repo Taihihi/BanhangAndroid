@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:duan/json/constant.dart';
 import 'package:duan/theme/colors.dart';
-// import 'package:duan/pages/account_page.dart';
 import 'package:duan/screens/cart_page.dart';
 import 'package:duan/pages/home_page.dart';
-// import 'package:duan/pages/more_page.dart';
 import 'package:duan/screens/shop_page.dart';
-// import 'package:duan/cloles/cloles1.dart';
-// import 'package:duan/json/login.dart';
-// import 'package:duan/ui/login/login_screen.dart';
 import 'package:duan/appmenu.dart';
 import 'package:duan/screens/setting_page.dart';
-// import 'package:duan/screens/profile_page.dart';
+import 'package:duan/screens/profile_page.dart';
+import 'package:duan/screens/notification_page.dart';
 
 class MorePage extends StatefulWidget {
   const MorePage({Key? key}) : super(key: key);
@@ -27,78 +23,6 @@ class _MorePageState extends State<MorePage> {
       body: getBody(),
       appBar: AppBar(title: const Text('Cloles')),
       drawer: const AppMenu(),
-      // drawer: Drawer(
-      //   child: ListView(
-      //     padding: EdgeInsets.zero,
-      //     children: [
-      //       const DrawerHeader(
-      //         decoration: BoxDecoration(color: Colors.lightBlue),
-      //         child: Text('Cloles',
-      //             textScaleFactor: 1.5, style: TextStyle(color: Colors.white)),
-      //       ),
-      //       ListTile(
-      //         leading: const Icon(Icons.home),
-      //         title: const Text("Home"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => HomePage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      //       ListTile(
-      //         leading: const Icon(Icons.shop),
-      //         title: const Text("Shop"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => StorePage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      // ListTile(
-      //   leading: const Icon(Icons.verified_user),
-      //   title: const Text("Account"),
-      //   onTap: () {
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) => AccountPage(),
-      //       ),
-      //     );
-      //   },
-      // ),
-      //       ListTile(
-      //         leading: const Icon(Icons.shopping_cart),
-      //         title: const Text("Cart"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => CartPage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      //       ListTile(
-      //         leading: const Icon(Icons.more_horiz),
-      //         title: const Text("More"),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) => MorePage(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      //     ],
-      //   ),
-      // ),
     );
   }
 
@@ -131,7 +55,7 @@ class _MorePageState extends State<MorePage> {
                     height: 10,
                   ),
                   Text(
-                    "4 Orders",
+                    "",
                     style: TextStyle(fontSize: 15, color: grey),
                   ),
                 ],
@@ -152,7 +76,6 @@ class _MorePageState extends State<MorePage> {
             padding: const EdgeInsets.only(left: 25, right: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              // children: List.generate(menusMore.length, (index) {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 40),
@@ -220,12 +143,12 @@ class _MorePageState extends State<MorePage> {
                   padding: const EdgeInsets.only(bottom: 40),
                   child: GestureDetector(
                     onTap: () {
-                      // Navigator.pushAndRemoveUntil(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => ProfilePage(),
-                      //     ),
-                      //     (route) => false);
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProfilePage(),
+                          ),
+                          (route) => false);
                     },
                     child: Container(
                       child: Text(
@@ -243,7 +166,7 @@ class _MorePageState extends State<MorePage> {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SettingsScreen(),
+                            builder: (context) => NotificationPage(),
                           ),
                           (route) => false);
                     },
@@ -268,7 +191,7 @@ class _MorePageState extends State<MorePage> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SettingsScreen(),
+                        builder: (context) => SettingsPage(),
                       ),
                       (route) => false);
                 },

@@ -111,15 +111,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       ],
                     ),
                   ),
-                  // SizedBox(height: 10.0),
-                  // Text(
-                  //   '${widget.product.price.toStringAsFixed(2)}',
-                  //   style: TextStyle(
-                  //     fontSize: 18.0,
-                  //     fontWeight: FontWeight.bold,
-                  //     color: Colors.green,
-                  //   ),
-                  // ),
                   SizedBox(height: 10.0),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 0),
@@ -164,13 +155,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       style: TextStyle(fontSize: 16.0),
                     ),
                   ),
-                  // Text(
-                  //   'Mô Tả:',
-                  //   style: TextStyle(
-                  //     fontSize: 16.0,
-                  //     fontWeight: FontWeight.bold,
-                  //   ),
-                  // ),
                   Text(
                     widget.product.description,
                     style: TextStyle(fontSize: 20.0),
@@ -182,64 +166,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       onPressed: addToCart,
                     ),
                   ),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //   children: [
-                  //     Text(
-                  //       'Số Lượng:',
-                  //       style: TextStyle(
-                  //         fontSize: 16.0,
-                  //         fontWeight: FontWeight.bold,
-                  //       ),
-                  //     ),
-                  //     // Row(
-                  //     //   children: [
-                  //     //     IconButton(
-                  //     //       icon: Icon(Icons.remove),
-                  //     //       onPressed: decrementQuantity,
-                  //     //     ),
-                  //     //     Text(quantity.toString()),
-                  //     //     IconButton(
-                  //     //       icon: Icon(Icons.add),
-                  //     //       onPressed: incrementQuantity,
-                  //     //     ),
-                  //     //   ],
-                  //     // ),
-                  //   ],
-                  // ),
-                  // SizedBox(height: 16.0),
-                  // ElevatedButton(
-                  //   onPressed: addToCart,
-                  //   child: Text('Thêm Vào Giỏ Hàng'),
-                  // ),
                 ],
               ),
             ),
-            // Divider(),
-            // Padding(
-            //   padding: EdgeInsets.all(16.0),
-            //   child: Text(
-            //     'Sản Phẩm Liên Quan',
-            //     style: TextStyle(
-            //       fontSize: 20.0,
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            // ),
-            // // Các sản phẩm liên quan
-            // // ...
-            // Padding(
-            //   padding: EdgeInsets.all(16.0),
-            //   child: Text(
-            //     'Đánh Giá Của Khách Hàng',
-            //     style: TextStyle(
-            //       fontSize: 20.0,
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            // ),
-            // Đánh giá của khách hàng
-            // ...
           ],
         ),
       ),

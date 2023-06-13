@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:duan/pages/home_page.dart';
 import 'package:duan/pages/more_page.dart';
-// import 'package:duan/pages/root_app.dart';
-// import 'package:duan/pages/cart_page.dart';
-// import 'package:duan/pages/store_page.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:duan/screens/shop_page.dart';
 
@@ -62,11 +59,6 @@ class _AppmenuState extends State<AppMenu> {
             title: const Text('Shop'),
             onTap: () => _showScreen(context, const ShopPage()),
           ),
-          // ListTile(
-          //   leading: const Icon(Icons.shopping_cart),
-          //   title: const Text('Cart'),
-          //   onTap: () => _showScreen(context, const CartPage()),
-          // ),
           ListTile(
             leading: const Icon(Icons.more_horiz),
             title: const Text('More'),
