@@ -1,5 +1,6 @@
 // File: screens/notification_page.dart
 import 'package:flutter/material.dart';
+import 'package:duan/pages/more_page.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({Key? key}) : super(key: key);
@@ -10,15 +11,28 @@ class NotificationPage extends StatelessWidget {
       // appBar: AppBar(
       //   title: Text('Notifications'),
       // ),
-      appBar: appBar(),
+      appBar: appBar(context),
       body: listView(),
     );
   }
 }
 
-PreferredSizeWidget appBar() {
+PreferredSizeWidget appBar(context) {
   return AppBar(
     title: Text('Notifications'),
+    leading: IconButton(
+      icon: Icon(
+        Icons.arrow_back,
+      ),
+      onPressed: () {
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MorePage(),
+            ),
+            (route) => false);
+      },
+    ),
   );
 }
 

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:duan/json/constant.dart';
 import 'package:duan/theme/colors.dart';
@@ -51,6 +52,14 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  final user = FirebaseAuth.instance.currentUser!;
+
+  // sign user out method
+  // void signUserOut() {
+  //   FirebaseAuth.instance.signOut();
+  // }
+
+  @override
   Widget getBody() {
     var size = MediaQuery.of(context).size;
     return ListView(

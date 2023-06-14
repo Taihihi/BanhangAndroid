@@ -8,6 +8,7 @@ import 'package:duan/appmenu.dart';
 import 'package:duan/screens/setting_page.dart';
 import 'package:duan/screens/profile_page.dart';
 import 'package:duan/screens/notification_page.dart';
+import 'package:duan/pages/login_page.dart';
 
 class MorePage extends StatefulWidget {
   const MorePage({Key? key}) : super(key: key);
@@ -117,28 +118,28 @@ class _MorePageState extends State<MorePage> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 40),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CartPage(
-                              cartItems: [],
-                            ),
-                          ),
-                          (route) => false);
-                    },
-                    child: Container(
-                      child: Text(
-                        "Cart",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 23),
-                      ),
-                    ),
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(bottom: 40),
+                //   child: GestureDetector(
+                //     onTap: () {
+                //       Navigator.pushAndRemoveUntil(
+                //           context,
+                //           MaterialPageRoute(
+                //             builder: (context) => CartPage(
+                //               cartItems: [],
+                //             ),
+                //           ),
+                //           (route) => false);
+                //     },
+                //     child: Container(
+                //       child: Text(
+                //         "Cart",
+                //         style: TextStyle(
+                //             fontWeight: FontWeight.w500, fontSize: 23),
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 40),
                   child: GestureDetector(
@@ -213,7 +214,7 @@ class _MorePageState extends State<MorePage> {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => MorePage(),
+                          builder: (context) => LoginPage(),
                         ),
                         (route) => false);
                   },

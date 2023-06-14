@@ -4,13 +4,37 @@ import 'package:duan/json/constant.dart';
 import 'package:duan/theme/colors.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:duan/pages/more_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
+
+  @override
+  State<ProfilePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<ProfilePage> {
+  final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
+    var password;
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+          ),
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MorePage(),
+                ),
+                (route) => false);
+          },
+        ),
       ),
       body: ListView(
         children: [
@@ -94,7 +118,7 @@ class ProfilePage extends StatelessWidget {
               ),
               fillColor: Color.fromARGB(255, 255, 255, 255),
               filled: true,
-              labelText: "Full Name",
+              labelText: "TTT",
               hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             ),
             validator: FormBuilderValidators.compose([
@@ -121,7 +145,7 @@ class ProfilePage extends StatelessWidget {
               ),
               fillColor: Color.fromARGB(255, 255, 255, 255),
               filled: true,
-              labelText: "Email",
+              labelText: user.email!,
               hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             ),
             validator: FormBuilderValidators.compose([
@@ -175,7 +199,7 @@ class ProfilePage extends StatelessWidget {
               ),
               fillColor: Color.fromARGB(255, 255, 255, 255),
               filled: true,
-              labelText: "Password",
+              labelText: "******",
               hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
             ),
             validator: FormBuilderValidators.compose([
