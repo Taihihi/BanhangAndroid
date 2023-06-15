@@ -67,8 +67,7 @@ class _HomePageState extends State<Cloles2> {
                         height: 500,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image:
-                                    NetworkImage(recommends2[index]['imgUrl']),
+                                image: AssetImage(recommends2[index]['imgUrl']),
                                 fit: BoxFit.cover)),
                       ),
                     ],

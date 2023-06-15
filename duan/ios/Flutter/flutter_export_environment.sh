@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=E:\2023_LTTBDD\New folder\flutter_windows_3.7.7-stable\flutter"
-export "FLUTTER_APPLICATION_PATH=E:\2023_LTTBDD\hoc\flutter_demo_21"
+export "FLUTTER_ROOT=A:\LTTBDD\flutter-sdk\flutter"
+export "FLUTTER_APPLICATION_PATH=A:\LTTBDD\tu lam\20\New folder (2)\duan"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"

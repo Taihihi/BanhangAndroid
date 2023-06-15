@@ -169,12 +169,12 @@ class _HomePageState extends State<ShopPage> {
           IconButton(
             icon: Icon(Icons.person),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ProfilePage(),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => ProfilePage(),
+              //   ),
+              // );
             },
           ),
           IconButton(
